@@ -1,0 +1,27 @@
+#For general
+
+*.zip
+!*--backup.zip
+*.rar
+*.tar.gz
+*.tar.xz
+*.DS_Store
+
+
+#For frontend developers
+
+.sass-cache
+vendor
+node_modules
+bower_components
+production
+
+#Prevent conflicts when +1 devs are pushing
+styles.css
+styles.css.map
+app.css
+app.css.map
+libs.css
+libs.css.map
+app.js
+libs.js
