@@ -1,0 +1,13 @@
+.l-footer
+  position: relative
+  background-color: desaturate(darken($br-main, 7%), 10%)
+  overflow: hidden
+
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-direction: row
+
+    +responsive(768)
+      flex-direction: column

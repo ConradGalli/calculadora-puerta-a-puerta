@@ -1,0 +1,19 @@
+.l-column-product
+  width: 100%
+  max-width: 100vw
+  background-color: #fff
+  // overflow-x: hidden
+
+
+  +responsive(641,min)
+    position: fixed
+    overflow-y: scroll
+    z-index: 3
+    left: 0
+    top: $nav-height
+    max-width: 350px
+    height: calc(100vh - 50px)
+    max-height: calc(100vh - 50px)
+    border-right: 1px solid darken(#fff, 8%)
+  +responsive(1025, min)
+    max-width: 400px

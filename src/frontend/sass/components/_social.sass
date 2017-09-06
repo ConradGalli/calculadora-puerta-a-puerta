@@ -1,0 +1,29 @@
+.c-social
+  @extend %clearfix
+  display: flex
+  align-items: center
+  flex-direction: row
+  justify-content: space-between
+  // text-align: center
+
+  &__icon
+    font-size: 1.5em
+
+  &__button
+    display: flex
+    align-items: center
+
+    &:not(:first-child)
+      margin-left: 15px
+
+    &_facebook
+      color: #3b5998
+
+    &_twitter
+      color: #1da1f2
+
+    &_whatsapp
+      display: flex
+      color: #25d366
+      +responsive(641,min)
+        display: none

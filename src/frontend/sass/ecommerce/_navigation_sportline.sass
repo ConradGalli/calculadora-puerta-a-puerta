@@ -1,0 +1,45 @@
+.c-navigation_sportline
+  font-family: $ft-ecommerce_sportline
+  background-color: #231f20
+
+  &.is-dark
+    background-color: #231f20
+
+  .c-navigation
+
+    &__logo
+      img
+        height: 44px
+
+    &__bars
+      &::before,
+      &::after
+        background-color: $br-ecommerce_sportline
+
+    &__menu
+      +responsive(840)
+        border-top: 1px solid transparentize(#fff, 0.8)
+
+    &__item
+      a
+        font-weight: 700
+        color: $br-ecommerce_sportline
+        font-family: $ft-ecommerce_sportline
+
+        &:hover
+          border-bottom: 1px solid $br-ecommerce_sportline
+
+    &__cart
+      background-color: $br-ecommerce_sportline
+      color: #fff
+
+      &.not-empty
+        background-color: $nf-success
+
+    &__cartLabel
+      font-family: $ft-ecommerce_sportline
+
+    &__cartTotal
+      font-family: $ft-ecommerce_sportline
+      &::before
+        font-family: $ft-ecommerce_sportline

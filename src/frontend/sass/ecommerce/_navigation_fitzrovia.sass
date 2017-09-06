@@ -1,0 +1,46 @@
+.c-navigation_fitzrovia
+  font-family: $ft-ecommerce_fitzrovia
+  background-color: $ne-10
+
+  &.is-dark
+    background-color: $ne-10
+
+  .c-navigation
+
+    &__logo
+      img
+        height: 40px
+        margin-top: 2px
+
+    &__bars
+      &::before,
+      &::after
+        background-color: #fff
+
+    &__menu
+      +responsive(840)
+        border-top: 1px solid transparentize(#fff, 0.8)
+
+    &__item
+      a
+        font-weight: 700
+        color: #fff
+        font-family: $ft-ecommerce_fitzrovia
+
+        &:hover
+          border-bottom: 1px solid #000
+
+    &__cart
+      background-color: $br-ecommerce_fitzrovia
+      color: #fff
+
+      &.not-empty
+        background-color: $nf-success
+
+    &__cartLabel
+      font-family: $ft-ecommerce_fitzrovia
+
+    &__cartTotal
+      font-family: $ft-ecommerce_fitzrovia
+      &::before
+        font-family: $ft-ecommerce_fitzrovia

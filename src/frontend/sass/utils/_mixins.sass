@@ -1,0 +1,78 @@
+/*====================================*/
+/* EXTENDS */
+/*====================================*/
+
+%clearfix
+  &
+    *zoom: 1
+  &::before,
+  &::after
+    content: ""
+    display: table
+  &::after
+    clear: both
+
+%bbx
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  -ms-box-sizing: border-box
+  -o-box-sizing: border-box
+  box-sizing: border-box
+
+%bgcover
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -ms-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+%flex
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+%ellipsis
+  display: block
+  width: 100%
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  
+/*====================================*/
+/* MIXINS */
+/*====================================*/
+
+@mixin bg-gradient-t2b($start-colour, $end-colour)
+  background-color: $start-colour
+  background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour))
+  background-image: -webkit-linear-gradient(top, $start-colour, $end-colour)
+  background-image:    -moz-linear-gradient(top, $start-colour, $end-colour)
+  background-image:     -ms-linear-gradient(top, $start-colour, $end-colour)
+  background-image:      -o-linear-gradient(top, $start-colour, $end-colour)
+  background-image:         linear-gradient(top, $start-colour, $end-colour)
+  filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}')
+
+
+@mixin bg-gradient-l2r($start-colour, $end-colour)
+  background-color: $start-colour
+  background-image: -webkit-gradient(linear, left top, right top, from($start-colour), to($end-colour))
+  background-image: -webkit-linear-gradient(left, $start-colour, $end-colour)
+  background-image:    -moz-linear-gradient(left, $start-colour, $end-colour)
+  background-image:     -ms-linear-gradient(left, $start-colour, $end-colour)
+  background-image:      -o-linear-gradient(left, $start-colour, $end-colour)
+  background-image:         linear-gradient(left, $start-colour, $end-colour)
+  filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}', gradientType='1')
+
+@mixin animation($args)
+  -webkit-animation: $args
+  animation: $args
+
+@mixin transform($args)
+  -webkit-transform: $args
+  -ms-transform: $args
+  transform: $args
+
+@mixin responsive($size, $type: max)
+  @media only screen and ($type + -width: $size + px)
+    @content

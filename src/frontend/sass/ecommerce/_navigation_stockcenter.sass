@@ -1,0 +1,45 @@
+.c-navigation_stockcenter
+  font-family: $ft-ecommerce_stockcenter
+  background-color: #000
+
+  &.is-dark
+    background-color: #000
+
+  .c-navigation
+
+    &__logo
+      img
+        height: 44px
+
+    &__bars
+      &::before,
+      &::after
+        background-color: $br-ecommerce_stockcenter
+
+    &__menu
+      +responsive(840)
+        border-top: 1px solid transparentize(#fff, 0.8)
+
+    &__item
+      a
+        font-weight: 700
+        color: darken(#fff, 20%)
+        font-family: $ft-ecommerce_stockcenter
+
+        &:hover
+          border-bottom: 1px solid darken(#fff, 20%)
+
+    &__cart
+      background-color: $br-ecommerce_stockcenter
+      color: #fff
+
+      &.not-empty
+        background-color: $nf-success
+
+    &__cartLabel
+      font-family: $ft-ecommerce_stockcenter
+
+    &__cartTotal
+      font-family: $ft-ecommerce_stockcenter
+      &::before
+        font-family: $ft-ecommerce_stockcenter

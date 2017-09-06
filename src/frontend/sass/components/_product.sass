@@ -1,0 +1,544 @@
+$c-product__gutter: 30px
+
+.c-product
+  width: 100%
+  opacity: 0
+  transform: translateY(25px)
+  transition: opacity 0.4s ease, transform 0.4s ease
+
+  +responsive(641, min)
+    max-width: 350px
+  +responsive(1025, min)
+    max-width: 400px
+
+  &.is-selected
+    opacity: 1
+    transform: translateY(0)
+
+    .c-product__photo
+      background-color: $ne-95
+      transform: scale(1)
+      border-radius: 0
+
+      &-label
+        opacity: 1
+
+  &__photo
+    position: relative
+    text-align: center
+    background-color: #fff
+    border-radius: 200px
+    overflow: hidden
+    transform: scale(0.8)
+    transition: background-color 0.8s ease 0.2s, transform 0.5s ease, border-radius 0.3s ease 0.2s
+    // height: 300px
+
+    &-label
+      display: block
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      width: 100%
+      text-align: center
+      padding: 6px 0
+      font-size: 0.7em
+      color: $ne-60
+      padding-top: 10px
+      padding-bottom: 10px
+      opacity: 0
+      transition: opacity 0.3s ease 0.5s,
+
+  .swiper-container
+    img
+      max-width: 80%
+
+  .swiper-button-next, .swiper-button-prev
+    height: 66px
+    width: 33px
+    margin-top: -33px
+    background-color: $ne-95
+    cursor: default
+
+  .swiper-button-prev, .swiper-container-rtl .swiper-button-next
+    left: 0px
+    padding-left: 10px
+    border-radius: 0 5px 5px 0
+
+  .swiper-button-next, .swiper-container-rtl .swiper-button-prev
+    right: 0px
+    padding-right: 10px
+    border-radius: 5px 0 0 5px
+
+  .swiper-button-prev, .swiper-container-rtl .swiper-button-next
+    background-image: url('../img/ui/icon__prev.svg')
+    opacity: 0.1
+
+  .swiper-button-next, .swiper-container-rtl .swiper-button-prev
+    background-image: url('../img/ui/icon__next.svg')
+    opacity: 0.1
+
+
+  &__detail
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-top: 1px solid darken(#fff, 8%)
+    text-transform: uppercasese
+    @extend %bbx
+    padding: 20px $c-product__gutter
+    color: $br-info
+
+    +responsive(641,min)
+      padding: 20px $c-product__gutter/2
+      cursor: pointer
+      display: none
+
+    &.is-targeted
+      animation: detailtargeted 0.4s ease 0.4s forwards
+
+  // -------------------------------------------------
+  // Header de producto
+  // -------------------------------------------------
+  &__header
+    border-top: 1px solid darken(#fff, 8%)
+    @extend %bbx
+    padding: $c-product__gutter
+
+    +responsive(641, min)
+      padding: $c-product__gutter/2
+      border-top: none
+
+  &__title
+    font-size: 1em
+    width: 100%
+    margin-bottom: 20px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &-action
+      color: $br-info
+
+
+
+  &__viewphotosmobile
+    color: $br-info
+    text-decoration: none
+
+    +responsive(641,min)
+      display: none
+
+    &:hover
+      text-decoration: none
+
+  &__name
+    width: 100%
+    color: #000
+    font-weight: 700
+    font-size: 2em
+
+    +responsive(641, min)
+      font-size: 1.5em
+
+  &__payment
+    display: none
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    margin-top: 10px
+
+    &.is-visible
+      display: flex
+
+  &__price
+    width: 100%
+    font-size: 2.5em
+    color: #000
+
+    +responsive(641, min)
+      font-size: 2em
+
+    &::before
+      content: '$'
+
+    &::after
+      content: ' c/u'
+      font-size: 0.5em
+      opacity: 0.3
+
+  &__installments,
+  &__shipping
+    width: 100%
+    padding-top: 5px
+    padding-bottom: 5px
+    font-size: 0.95em
+
+    +responsive(641, min)
+      font-size: 0.9em
+
+      &::before
+        display: inline-block
+        transform: translateY(2px)
+        margin-right: 0
+
+
+  &__installments
+    margin-top: 10px
+    display: flex
+    align-items: center
+
+    &::before
+      content: url('../img/ui/icon_card_black.svg')
+      margin-right: 10px
+      color: #39b54a
+
+    &-qty
+      &::before,
+      &::after
+        content: '\00a0'
+
+    &-price
+      &::before
+        content: '\00a0$'
+
+  &__shipping
+    display: flex
+    align-items: center
+
+    &::before
+      content: url('../img/ui/icon_truck_green.svg')
+      margin-right: 10px
+      color: #39b54a
+
+    &-details
+      color: $br-info
+      margin-left: 5px
+
+
+  // -------------------------------------------------
+  // Configuration
+  // -------------------------------------------------
+  &__configuration
+    @extend %bbx
+    padding: $c-product__gutter
+    border-top: 1px solid darken(#fff, 8%)
+
+    +responsive(641, min)
+      padding: $c-product__gutter/2
+
+    &.is-outofstock
+      border-top: none
+
+
+  // ::::: OUT OF STOCK :::::
+  &__outofstock
+    display: none
+    @extend %bbx
+    padding: 20px
+    background-color: $ne-90
+    border-radius: 5px
+
+    &.is-visible
+      display: block
+
+    &-msg
+      display: block
+      font-size: 0.85em
+
+    a
+      font-weight: 700
+      color: $br-info
+      text-decoration: underline
+
+  // ::::: Buy :::::
+  &__buy
+    display: none
+
+    +responsive(641,min)
+      margin-bottom: $c-product__gutter/2
+
+    &.is-visible
+      display: block
+
+  &__inputs
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    flex-direction: row
+
+    +responsive(641,min)
+      flex-direction: row
+
+  &__stock
+    position: relative
+    width: 100%
+    display: none
+    margin-bottom: $c-product__gutter/2
+
+    &:not(:first-child)
+      margin-left: 10px
+
+    &:hover
+      label
+        color: $br-info
+        opacity: 1
+
+    &.is-visible
+      display: block
+
+    &.is-success
+      label
+        color: $nf-success
+        opacity: 1
+        &::after
+          opacity: 1
+          transform: translateX(0) scale(0.6)
+
+      .c-product__select
+        border-color: $nf-success
+
+    &.is-alerted
+      label
+        color: $nf-warning
+        opacity: 1
+
+      .c-product__select
+        // border-color: $nf-warning
+
+
+    label
+      position: relative
+      display: block
+      height: 0
+      z-index: 2
+      font-size: 0.85em
+      transform: translateY(130%)
+      opacity: 0.3
+      text-indent: 10px
+      width: 100%
+      padding-top: 5px
+
+      &::after
+        position: absolute
+        display: block
+        z-index: 100
+        right: 5px
+        top: 7px
+        height: 19px
+        opacity: 0
+        justify-content: center
+        align-items: center
+        border-radius: 20px
+        content: url('../img/ui/icon__check_success.svg')
+        transform: translateX(-10px) scale(0.6)
+        transition: transform 0.2s ease,
+
+  &__select
+    position: relative
+    z-index: 1
+    width: 100%
+    font-size: 1em
+    transition: box-shadow 0.2s ease
+    padding: 30px 10px 10px 10px
+    background: #fff url('../img/ui/select__arrow--gray.svg') right 5px bottom 8px no-repeat
+    // text-transform: uppercase
+
+    option[data-qty="0"]
+      display: none
+
+    &:hover
+      background: #fff url('../img/ui/select__arrow--gray.svg') right 5px bottom 8px no-repeat
+
+    &.is-blinking
+      animation: c-product__select_blinking 0.7s ease forwards
+
+  &__otheractions
+    margin-bottom: $c-product__gutter/2
+
+  &__sizetableview
+    padding: 5px
+    // font-size: 0.8em
+    color: $br-info
+
+    +responsive(641,min)
+      cursor: pointer
+
+  &__push
+    &-button
+      &.is-disabled
+        opacity: 0.2
+
+  // ::::: Variants :::::
+  &__variants
+    position: relative
+    display: none
+    min-height: 60px
+    margin-bottom: $c-product__gutter/2
+
+    +responsive(641,min)
+      margin-bottom: $c-product__gutter/2
+
+    &.is-visible
+      display: block
+
+    &.is-important
+      display: block
+
+    &_top
+      border-bottom: 1px solid #f2f2f2
+      margin-bottom: 15px
+      padding-bottom: 15px
+
+      .c-product-cm__variants-placeholder
+        bottom: 20px
+
+    &_bottom
+      border-top: 1px solid #f2f2f2
+      margin-top: 15px
+      padding-top: 15px
+
+      .c-product-cm__variants-placeholder
+        top: 20px
+
+    &-box
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      margin-top: 10px
+
+      &_toggle
+        overflow: hidden
+        border-radius: 3px
+
+    &-placeholder
+      position: absolute
+      z-index: 10
+      left: 0
+      opacity: 0.8
+
+  &__var
+    position: relative
+
+    +responsive(641, min)
+      cursor: pointer
+
+    &::after
+      z-index: 10px
+      content: '!'
+      top: -5px
+      left: -7px
+      background-color: $nf-warning
+      box-shadow: 0 2px 2px transparentize(darken($nf-warning, 20%), 0.5)
+      padding: 1px 12px
+      border-radius: 5px
+      text-align: center
+      transform: scale(0)
+      color: #000
+
+    &.is-outofstock
+      display: none
+      &::after
+        transform: scale(1)
+
+      &.is-important
+        display: flex
+
+    &_toggle
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 0.8em
+      background-color: #fff
+      height: 40px
+
+      &:first-child
+        border-radius: 3px 0 0 3px
+        border: none
+      &:last-child
+        border-radius: 0 3px 3px 0
+
+      &::after
+        position: absolute
+        left: 10px
+        top: 9px
+
+      &.is-selected
+        box-shadow: none
+        color: #fff
+
+      &_alternative
+        box-shadow: none
+        background-color: red
+
+    &_dot
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 50px
+      height: 50px
+      margin-right: 10px
+      border-radius: 25px
+      background-color: lightgray
+
+      &.is-selected
+        &::before
+          transform: scale(0.5)
+
+      &::before
+        transform: scale(0)
+        margin-top: 3px
+        transition: transform 0.2s ease
+        opacity: 0.75
+
+      &::after
+        position: absolute
+
+
+      // ::::: Color Variants :::::
+      &[data-sku="111111111"]
+        background-color: #fff
+      &[data-sku="222222222"]
+        background-color: #002395
+      &[data-sku="333333333"]
+        background-color: #ed2939
+
+      &[data-contrast="low"]
+        box-shadow: inset 0 0 0 1px $ne-90
+        &::before
+          content: url('../img/ui/icon__check_black.png')
+      &[data-contrast="high"]
+        &::before
+          content: url('../img/ui/icon__check_white.png')
+
+  &__customize
+    margin-bottom: 20px
+
+  &__share
+    border-top: 1px solid darken(#fff, 8%)
+    padding-top: 25px
+    padding-bottom: 25px
+    padding: $c-product__gutter
+
+    +responsive(641, min)
+      padding: $c-product__gutter/2
+      border: none
+
+    .c-product__title
+      margin-bottom: 0
+
+@keyframes detailtargeted
+  50%
+    transform: scale(0.95)
+  75%
+    transform: scale(1.05)
+  100%
+    transform: scale(1)
+
+@keyframes c-product__select_blinking
+  50%
+    background-color: lighten($nf-warning, 20%)
+    border-color: $nf-warning
+  75%
+    background-color: #fff

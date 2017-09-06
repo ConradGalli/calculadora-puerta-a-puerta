@@ -1,0 +1,70 @@
+.l-column
+  position: relative
+
+  // Este padding top es mÃ­nimo para compensar el alto del nav fijo
+  width: 100%
+  padding-top: $nav-height
+
+
+  .wrappere
+    max-width: none
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+    flex-direction: row
+
+    +responsive(640)
+      flex-direction: column
+
+
+.l-hero
+  position: relative
+
+  // Este padding top es mÃ­nimo para compensar el alto del nav fijo
+  padding-top: $nav-height
+
+  // background-color: #e2e2e2
+  overflow: hidden
+  @extend .air
+  // display: none
+  +responsive(600)
+    padding-bottom: 0
+    padding-left: 0
+    padding-right: 0
+
+  &__wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: row
+    transition: transform 0.5s ease 0.5s
+    +responsive(600)
+      flex-direction: column
+      justify-content: center
+
+    &.is-switching
+      transform: translateY(200px)
+
+  &__block
+    position: relative
+    width: calc(100% / 3)
+    max-width: calc(100% / 3)
+    +responsive(768)
+      width: 50%
+
+  // ATENCIÃ“N
+  // Si se va a poner una caja de producto en el hero, consultar esta misma hoja de estilo en Hypervenom 3: https://bitbucket.org/3818/nar-012-hypervenom-3
+
+  // Swiper Slider estilos basicos
+
+  .swiper-pagination-bullet
+    width: 10px
+    height: 10px
+
+  .swiper-pagination-bullet-active
+    background-color: #000
+
+  .swiper-slide
+    img
+      width: 100%
+      height: auto

@@ -1,0 +1,83 @@
+.l-sizeTable
+  width: 100%
+
+  &_1
+    background-color: darken($br-main, 0%)
+  &_2
+    background-color: darken($br-main, 0%)
+
+  &.is-visible
+    visibility: visible
+    opacity: 1
+
+    .l-sizeTable__wrapper
+      transform: translateY(0)
+
+
+  +responsive(800)
+    overflow-y: scroll
+
+  &__wrapper
+    @extend .air
+    transition: all 0.5s ease 0s
+    transform: translateY(-50px)
+
+  &__titles
+    text-align: center
+    margin-bottom: 50px
+
+  &__ref
+    width: 60%
+    float: right
+    height: 500px
+    background-image: url('../img/ui/sizetable_desktop_black.svg')
+    background-repeat: no-repeat
+    background-position: right center
+    background-size: auto 85%
+
+    +responsive(800)
+      width: 100%
+      float: none
+      max-width: 350px
+      height: 250px
+      background-image: url('../img/ui/sizetable_mobile_black.svg')
+      background-size: 90% auto
+      background-position: center center
+      margin-right: auto
+      margin-left: auto
+
+    // @media screen and (max-width: 500px)
+
+  &__table
+    width: 40%
+    display: block
+    float: left
+
+    +responsive(800)
+      width: 100%
+      float: none
+
+    table
+      color: #000
+      margin-right: auto
+      margin-left: auto
+
+    tr
+      border-bottom: 1px solid #000
+      border-left: 1px solid #000
+      border-right: 1px solid #000
+      font-size: 14px
+
+    td
+      text-align: center
+      width: 80px
+      padding: 5px
+
+    thead
+      tr
+        border-right: none
+        border-left: none
+
+      th
+        padding-top: 15px
+        padding-bottom: 15px

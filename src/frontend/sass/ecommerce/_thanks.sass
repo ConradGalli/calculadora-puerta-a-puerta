@@ -1,0 +1,55 @@
+.l-thanks
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	display: flex
+	justify-content: center
+	align-items: center
+
+	&_dexter
+		background-color: #000
+
+		.l-thanks__title
+			font-family: $ft-ecommerce_dexter
+			color: #fff
+
+		.l-thanks__paragraph
+			font-family: $ft-ecommerce_dexter
+			font-size: 0.8rem
+			color: #fff
+			text-transform: uppercase
+			font-weight: 700
+
+	&__wrapper
+		text-align: center
+
+	&__logo
+		clear: both
+		width: 75px
+		margin-left: 10px
+		animation: cart ease-in-out 1s infinite
+
+	&__title
+		margin-top: 0
+		text-transform: uppercase
+		font-size: 3em
+		font-weight: 400
+		+responsive(600)
+			font-size: 2em
+		+responsive(375)
+			font-size: 1.5em
+
+	&__paragraph
+		margin: 0
+		margin-top: 16px
+
+
+@keyframes cart
+	0%,100%
+		transform: scale(1)
+		opacity: 0.8
+	50%
+		transform: scale(1.1)
+		opacity: 1
