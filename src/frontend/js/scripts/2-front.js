@@ -18,6 +18,7 @@ function f_calculate__ars(target) {
 
 	console.log('\n\nCalculando...');
 	(product > 200) ? console.log('\nTené en cuenta que el precio del producto no debe superar los US$ 200\n\n') : console.log('');
+	(product < 4) ? console.log('\nSi... es increible pagar tanto por un producto de solo US$ 3\n\n') : console.log('');
 	console.log('Dolar: '+dollar.toFixed(2));
 	console.log('Precio completo: '+price.toFixed(2));
 	console.log('Precio completo para impuestar con franquicia: '+price_tax.toFixed(2));

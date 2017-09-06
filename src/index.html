@@ -53,11 +53,11 @@
 	<!-- NOTE: Fonts -->
 
 	<!-- NOTE: Styles -->
-	<link rel="stylesheet" href="assets/css/libs.css?rev=1504659064023" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="assets/css/app.css?rev=1504659063826" media="screen" title="no title" charset="utf-8">
+	<!-- <link rel="stylesheet" href="assets/css/libs.css?rev=1504668065140" media="screen" title="no title" charset="utf-8"> -->
+	<!-- <link rel="stylesheet" href="assets/css/app.css?rev=1504668065070" media="screen" title="no title" charset="utf-8"> -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet"> -->
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet"> -->
 
 	<!-- NOTE: Scripts -->
 	<!-- <script>try {console.log('%c\n\nCrafted by 3818 - Design & Development.\n\nWe are http://3818.com.ar/\nYour digital offline & online UX agency.\nWe like to work. Hard.\n\nBased in Buenos Aires, Argentina. We love to push the limits in what we do. We believe in people.\nMotivated, talented, inspired & focused on human/computer interactions.\n\nFollow us on Facebook: https://www.facebook.com/3818devarg/\n\n', 'color: green');} catch (e) {}</script> -->
@@ -80,10 +80,6 @@
 </head>
 <body id="top">
 
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPRZZ3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-
 	<!-- NOTE: ACTIVITY EVENTS -->
 	<span class="js-gaActivity__bounce_scroll" onclick="ga(&apos;send&apos;, &apos;event&apos;, &apos;Actividad&apos;, &apos;Scroll&apos;, &apos;El usuario ha navegado a traves de la p&#xE1;gina.&apos;);"></span>
 	<span class="js-gaActivity__bounce_end" onclick="ga(&apos;send&apos;, &apos;event&apos;, &apos;Actividad&apos;, &apos;Scroll&apos;, &apos;El usuario ha llegado al final de la p&#xE1;gina.&apos;);"></span>
@@ -97,99 +93,22 @@
 
 	<div>
 		<input type="number" name="button" value="" id="price_original" placeholder="Precio del producto...">
-		<input type="number" name="button" value="1" id="shipping_price" placeholder="Precio del envío...">
+		<input type="number" name="button" value="1" id="shipping_price" placeholder="Precio del env&#xED;o...">
 		<button onclick="f_calculate__ars();">Calcular</button>
 	</div>
 
-	<span id="franchise" class="cta cta_xs cta_main" onclick="f_franchise__toggle()">Aún no usé mi franquicia de US$ 25</span>
-	<span id="product_book" class="cta cta_xs cta_main" onclick="f_book__toggle()">Esta compra es un libro</span>
+	<span id="franchise" class="cta cta_xs cta_main" onclick="f_franchise__toggle()">&times; Aún no usé mi franquicia de US$ 25</span>
+	<br>
+	<span id="product_book" class="cta cta_xs cta_main" onclick="f_book__toggle()">&times; Esta compra es un libro</span>
 
 	<div class="">
 		<span id="price_final"></span>
 	</div>
 
 
-
-
-	<!-- NOTE: FOOTER -->
-	<footer class="l-footer">
-			<div class="wrapper wrapper_lg l-footer__wrapper">
-			</div>
-	</footer>
-	<!-- NOTE: ./FOOTER -->
-
-	<!-- NOTE: SIZE TABLE -->
-	<div class="l-sizeTable">
-		<!-- Load your sizetable brand here -->
-	</div>
-	<!-- XXX: SIZE TABLE -->
-
-	<!-- NOTE: MODAL -->
-	<div class="c-modal c-modal_index">
-		<div class="c-modal__container c-modal__container_xxl">
-			<i class="c-modal__close icon-cancel" data-modal="index" onclick="f_modal__trigger($(this));"></i>
-			<h2 class="c-modal__title">Elegí el plan ideal para tu negocio</h2>
-			<div class="c-modal__description">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eos, saepe quae iusto fugit libero! Aut debitis eveniet unde itaque harum, minus repudiandae molestias, tenetur culpa obcaecati laudantium. Voluptatem, alias?
-			</div>
-			<div class="c-modal__footer">
-				<span data-modal="index" onclick="f_modal__trigger($(this));">CERRAR MODAL</span>
-			</div>
-		</div>
-	</div>
-	<!-- XXX: MODAL -->
-
-	<!-- NOTE: MODAL -->
-	<div class="c-modal c-modal_description">
-		<div class="c-modal__body">
-			<div class="c-modal__header">
-				<div class="wrapper">
-					<div class="c-modal__close c-modal__close_desktop" data-modal="description" onclick="f_modal__trigger($(this));">
-						<i class="icon-left-open"></i> Volver
-					</div>
-				</div>
-			</div>
-			<div class="c-modal__container c-modal__container_xl">
-				<span class="c-modal__title">Modal de descripción</span>
-				<div class="c-modal__description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sint officiis repellendus, vel beatae atque recusandae saepe quos laborum eaque rem, magni minus quia tempora. Porro possimus officiis esse alias.
-				</div>
-			</div>
-		</div>
-		<div class="c-modal__close c-modal__close_mobile" data-modal="description" onclick="f_modal__trigger($(this));">
-			<i class="icon-left-open"></i>
-			<span>Volver</span>
-		</div>
-	</div>
-	<!-- XXX: MODAL -->
-
-	<!-- NOTE: MODAL -->
-	<div class="c-modal c-modal_sizetable">
-		<div class="c-modal__body">
-			<div class="c-modal__header">
-				<div class="wrapper">
-					<div class="c-modal__close c-modal__close_desktop" data-modal="sizetable" onclick="f_modal__trigger($(this));">
-						<i class="icon-left-open"></i> Volver
-					</div>
-				</div>
-			</div>
-			<div class="c-modal__container c-modal__container_xl">
-				<span class="c-modal__title">Tabla de talles <br>Revisá las medidas de tu pie y comparalas en la tabla de abajo</span>
-				<div class="c-modal__description">
-					<!-- Tabla de talles -->
-				</div>
-			</div>
-		</div>
-		<div class="c-modal__close c-modal__close_mobile" data-modal="sizetable" onclick="f_modal__trigger($(this));">
-			<i class="icon-left-open"></i>
-			<span>Volver</span>
-		</div>
-	</div>
-	<!-- XXX: MODAL -->
-
 	<!-- NOTE: Scripts -->
-	<script src="assets/js/libs.js?rev=1504659063833" charset="utf-8"></script>
-	<script src="assets/js/app.js?rev=1504659064139" charset="utf-8"></script>
+	<script src="assets/js/libs.js?rev=1504668065017" charset="utf-8"></script>
+	<script src="assets/js/app.js?rev=1504668065090" charset="utf-8"></script>
 
 </body>
 </html>
