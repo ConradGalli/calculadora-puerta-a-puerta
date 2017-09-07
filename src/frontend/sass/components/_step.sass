@@ -1,0 +1,17 @@
+.c-step
+	position: relative
+
+	&_first
+		display: block
+
+	&_second
+		visibility: hidden
+		background-color: red
+		transform: translateY(20px) scale(1.1)
+		opacity: 0
+		transition: transform 0.5s ease 0.5s, opacity 0.5s ease 0.5s
+
+		&.is-visible
+			visibility: visible
+			opacity: 1
+			transform: translateY(0) scale(1)
