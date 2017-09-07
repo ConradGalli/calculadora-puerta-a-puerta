@@ -1,0 +1,16 @@
+.c-step
+	position: relative
+
+	&_first
+		display: block
+
+	&_second
+		visibility: hidden
+		transform: translateY(20px)
+		opacity: 0
+		transition: transform 0.5s ease 0s, opacity 0.5s ease 0s
+
+		&.is-visible
+			visibility: visible
+			opacity: 1
+			transform: translateY(0)
