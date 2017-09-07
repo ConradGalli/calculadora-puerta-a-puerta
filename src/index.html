@@ -43,6 +43,7 @@
 
 	<!-- NOTE: App color & img -->
 	<!-- Generate your favicons code and paste here - http://realfavicongenerator.net/ -->
+	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="apple-touch-icon" sizes="180x180" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/favicon-16x16.png" sizes="16x16">
@@ -97,6 +98,7 @@
 			<img src="assets/img/ui/calculadora-puerta-a-puerta.png" alt="" class="c-navigation__logo">
 			<span class="c-navigation__help">
 				<i class="material-icons md-24">help</i>
+				<i class="material-icons md-24">share</i>
 			</span>
 		</div>
 	</nav>
@@ -105,22 +107,25 @@
 		<div class="c-product-price">
 			<div class="c-product-price__box">
 				<label for="price_original" class="c-product-price__uss">US$</label>
-				<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00">
+				<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00" onkeyup="f_calculate__ars(false);">
 			</div>
-			<div class="c-product-price__question-book">
+			<!-- <div class="c-product-price__ok" onclick="f_calculate__ars(false);">
+				<i class="material-icons">done</i>
+			</div> -->
+			<!-- <div class="c-product-price__question-book">
 				<div class="c-product-price__label">¿Esta compra es un libro?</div>
 				<div class="c-product-price__buttons">
 					<button type="button" name="button" class="cta cta_sm cta_info_outline" onclick="f_calculate__ars(true);">SI</button>
 					<button type="button" name="button" class="cta cta_sm cta_info" onclick="f_calculate__ars(false);">NO</button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 
 	<div class="c-step c-step_second">
-		<div class="price-header">
-			<i class="material-icons md-24">arrow_back</i>
-			<span id="price_final">0.00</span>
+		<div class="c-price-header">
+			<!-- <i class="material-icons md-24">arrow_back</i> -->
+			<span id="price_final" class="c-price-header__price">0.00</span>
 		</div>
 
 	</div>

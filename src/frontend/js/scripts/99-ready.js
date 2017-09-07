@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
 	$('#price_original').focus();
-	$('.c-product-price__box').addClass('is-visible')
+	$('.c-product-price__box, .c-navigation').addClass('is-visible')
 	/* Load products */
 
 

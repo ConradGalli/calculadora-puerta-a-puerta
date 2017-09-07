@@ -8,7 +8,7 @@ function f_calculate__ars(book) {
 		product = parseFloat($('#price_original').val()) || 0, // precio del producto
 		shipping = parseFloat($('#shipping_price').val()) || 0, // costo del envío
 		franchise = ($('#franchise').hasClass('is-selected')) ? 25 : 0, // franquicia anual que otorga la AFIP
-		courier = (book === true) ? 0 : 120, // envío por Correo Argentino
+		courier = (book === true || product === 0) ? 0 : 120, // envío por Correo Argentino
 
 		price = product + shipping,
 		price_tax = ((price-franchise) < 0) ? 0 : price -franchise,
