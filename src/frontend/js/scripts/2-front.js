@@ -3,7 +3,7 @@ function f_calculate__ars(book) {
 	var
 		book = book || false,
 		tax = 50, // porcentaje
-		dollar = 17.54, // hacer dinámico
+		dollar = dollarConverted, // hacer dinámico
 
 		product = parseFloat($('#price_original').val()) || 0, // precio del producto
 		shipping = parseFloat($('#shipping_price').val()) || 0, // costo del envío

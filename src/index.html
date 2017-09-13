@@ -54,8 +54,8 @@
 	<!-- NOTE: Fonts -->
 
 	<!-- NOTE: Styles -->
-	<link rel="stylesheet" href="assets/css/libs.css?rev=1504668065140" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="assets/css/app.css?rev=1504668065070" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="assets/css/libs.css?rev=1505261537266" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="assets/css/app.css?rev=1505261537176" media="screen" title="no title" charset="utf-8">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet"> -->
@@ -93,50 +93,47 @@
 	<!-- XXX: ACTIVITY EVENTS -->
 
 
-	<nav class="c-navigation">
-		<div class="wrapper wrapper_lg">
-			<img src="assets/img/ui/calculadora-puerta-a-puerta.png" alt="" class="c-navigation__logo">
-			<span class="c-navigation__help">
-				<i class="material-icons md-24">help</i>
-				<i class="material-icons md-24">share</i>
-			</span>
-		</div>
-	</nav>
 
-	<div class="c-step c-step_first">
-		<div class="c-product-price">
-			<div class="c-product-price__box">
-				<label for="price_original" class="c-product-price__uss">US$</label>
-				<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00" onkeyup="f_calculate__ars(false);">
+	<section class="wrapper wrapper_xs">
+		<nav class="c-navigation">
+			<div class="wrapper wrapper_lg">
+				<img src="assets/img/ui/calculadora-puerta-a-puerta.png" alt="" class="c-navigation__logo">
+				<span class="c-navigation__help">
+					<i class="material-icons md-24">help</i>
+					<i class="material-icons md-24">share</i>
+				</span>
 			</div>
-			<!-- <div class="c-product-price__ok" onclick="f_calculate__ars(false);">
-				<i class="material-icons">done</i>
-			</div> -->
-			<!-- <div class="c-product-price__question-book">
-				<div class="c-product-price__label">¿Esta compra es un libro?</div>
-				<div class="c-product-price__buttons">
-					<button type="button" name="button" class="cta cta_sm cta_info_outline" onclick="f_calculate__ars(true);">SI</button>
-					<button type="button" name="button" class="cta cta_sm cta_info" onclick="f_calculate__ars(false);">NO</button>
+		</nav>
+
+		<div class="c-step c-step_first">
+			<div class="c-product-price">
+				<div class="c-product-price__box">
+					<label for="price_osmriginal" class="c-product-price__uss">US$</label>
+					<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00">
 				</div>
-			</div> -->
-		</div>
-	</div>
-
-	<div class="c-step c-step_second">
-		<div class="c-price-header">
-			<!-- <i class="material-icons md-24">arrow_back</i> -->
-			<span id="price_final" class="c-price-header__price">0.00</span>
+				<button class="c-product-price__ok is-enabled" onclick="f_calculate__ars(false);">
+					<i class="material-icons md-24">done</i>
+				</button>
+			</div>
 		</div>
 
-	</div>
+		<div class="c-step c-step_second">
+			<div class="c-price-header">
+				<!-- <i class="material-icons md-24">arrow_back</i> -->
+				<span id="price_final" class="c-price-header__price">0.00</span>
+			</div>
+
+		</div>
+	</section>
+
 
 	<!-- <span id="franchise" class="cta cta_xs cta_main" onclick="f_franchise__toggle()">&times; Aún no usé mi franquicia de US$ 25</span> -->
 
 
 
 	<!-- NOTE: Scripts -->
-	<script src="assets/js/libs.js?rev=1504743381408" charset="utf-8"></script>
-	<script src="assets/js/app.js?rev=1504743381481" charset="utf-8"></script>
+	<script src="assets/js/libs.js?rev=1505261537143" charset="utf-8"></script>
+	<script src="assets/js/app.js?rev=1505261537210" charset="utf-8"></script>
 
 </body>
 </html>
