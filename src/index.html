@@ -44,12 +44,13 @@
 	<!-- NOTE: App color & img -->
 	<!-- Generate your favicons code and paste here - http://realfavicongenerator.net/ -->
 	<meta name="mobile-web-app-capable" content="yes">
-	<link rel="apple-touch-icon" sizes="180x180" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/manifest.json">
-	<link rel="mask-icon" href="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/safari-pinned-tab.svg" color="#313131">
-	<meta name="theme-color" content="#ffffff">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0052cc">
+	<meta name="theme-color" content="#0052cc">
 
 	<!-- NOTE: Fonts -->
 
@@ -95,32 +96,111 @@
 
 
 	<section class="wrapper wrapper_xs">
-		<nav class="c-navigation">
+		<nav class="c-navigation is-visible">
 			<div class="wrapper wrapper_lg">
-				<img src="assets/img/ui/calculadora-puerta-a-puerta.png" alt="" class="c-navigation__logo">
-				<span class="c-navigation__help">
-					<i class="material-icons md-24">help</i>
-					<i class="material-icons md-24">share</i>
+				<img src="assets/img/ui/calculadora-puerta-a-puerta_w.png" alt="" class="c-navigation__logo">
+				<span class="c-navigation__links">
+					<!-- <a href="#share">
+						<i class="material-icons md-24">share</i>
+					</a> -->
+					<a href="https://lucasromerodb.github.io/" target="_blank">
+						<i class="material-icons md-24">face</i>
+					</a>
 				</span>
 			</div>
 		</nav>
 
+		<h1 class="c-step__title c-step__title_main">Calculadora puerta a puerta</h1>
+		<p class="c-step__paragraph">Calculá el costo final de lo que querés importar bajo el régimen de AFIP "puerta a puerta", obtené el costo del VEP y además obtené todos los detalles de importación. <br><br><sup>(Esta calculadora funciona únicamente con Correo Argentino)</sup></p>
+
 		<div class="c-step c-step_first">
+			<h3 class="c-step__title c-step__title_extra">¿Cuánto vas a gastar?</h3>
 			<div class="c-product-price">
 				<div class="c-product-price__box">
 					<label for="price_osmriginal" class="c-product-price__uss">US$</label>
-					<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00">
+					<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00" onkeyup="f_enable__ok();">
 				</div>
-				<button class="c-product-price__ok is-enabled" onclick="f_calculate__ars(false);">
+				<button class="c-product-price__ok" onclick="f_calculate__ars(false);">
 					<i class="material-icons md-24">done</i>
 				</button>
 			</div>
+			<div class="c-step__dollar">Precio del dólar: AR$ <span id="dollarConverted">12.345678</span></div>
 		</div>
 
 		<div class="c-step c-step_second">
 			<div class="c-price-header">
-				<!-- <i class="material-icons md-24">arrow_back</i> -->
+				<span class="c-price-header__title">Costo total estimado</span>
 				<span id="price_final" class="c-price-header__price">0.00</span>
+			</div>
+
+
+
+			<div class="c-details c-details_modifiers shipping_price-trigger" onclick="f_shipping__toggle()">
+				<div class="c-details__text">El precio incluye el envío</div>
+				<div class="c-details__actions"><i class="material-icons">check_box</i></div>
+			</div>
+			<div class="c-details c-details_modifiers shipping_price-container" style="display: none">
+				<div class="c-details__box">
+					<label for="price_osmriginal" class="c-details__uss">US$</label>
+					<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00">
+				</div>
+				<button type="button" name="button" class="c-details__button" onclick="f_book_condition();">Calcular</button>
+			</div>
+
+
+
+			<div class="c-details c-details_modifiers" id="book" onclick="f_book__toggle()">
+				<div class="c-details__text">Esta compra es un libro</div>
+				<div class="c-details__actions"><i class="material-icons">check_box_outline_blank</i></div>
+			</div>
+			<div class="c-details c-details_modifiers" id="franchise" onclick="f_franchise__toggle()">
+				<div class="c-details__text">Es mi primer compra del año</div>
+				<div class="c-details__actions"><i class="material-icons">check_box_outline_blank</i></div>
+			</div>
+
+			<div class="c-details">
+				<div class="c-details__text">Precio del producto</div>
+				<div class="c-details__price c-details__price_usd" id="log-product">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Precio del envío</div>
+				<div class="c-details__price c-details__price_usd" id="log-shipping">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Precio del dólar</div>
+				<div class="c-details__price c-details__price_usd" id="log-dollar">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Franquicia de importación</div>
+				<div class="c-details__price c-details__price_usd" id="log-franchise">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Producto + envío</div>
+				<div class="c-details__price c-details__price_usd" id="log-fullprice">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Precio con el beneficio de la franquicia</div>
+				<div class="c-details__price c-details__price_usd" id="log-franchisedprice">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">VEP (impuesto del 50% aplicado sobre el valor en US$ del producto + envío)</div>
+				<div class="c-details__price c-details__price_usd" id="log-tax">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Precio final en US$</div>
+				<div class="c-details__price c-details__price_ars" id="log-priceusd">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Precio final en AR$</div>
+				<div class="c-details__price c-details__price_ars" id="log-pricears">0</div>
+			</div>
+			<div class="c-details">
+				<div class="c-details__text">Servicios del Correo Argentino</div>
+				<div class="c-details__price c-details__price_ars" id="log-courrier">0</div>
+			</div>
+			<div class="c-details c-details_results">
+				<div class="c-details__text">Total en AR$</div>
+				<div class="c-details__price c-details__price_ars" id="log-totalars">0</div>
 			</div>
 
 		</div>

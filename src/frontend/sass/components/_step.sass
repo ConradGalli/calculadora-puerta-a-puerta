@@ -3,14 +3,52 @@
 
 	&_first
 		display: block
+		margin-bottom: 20px
 
 	&_second
+		height: 1px
+		overflow-y: hidden
+		// background-color: lighten($br-main, 5%)
+		background-color: #fff
 		visibility: hidden
-		transform: translateY(20px)
+		// padding-top: 20px
+		// padding-bottom: 20px
 		opacity: 0
-		transition: transform 0.5s ease 0s, opacity 0.5s ease 0s
+		transition: opacity 0.7s ease 0s
 
 		&.is-visible
+			height: auto
+			overflow-y: auto
 			visibility: visible
 			opacity: 1
-			transform: translateY(0)
+
+	&__title
+		@extend %bbx
+		padding: 0 20px
+		margin: 0
+		// margin-top: 10px
+		margin-bottom: 15px
+
+		&_main
+			color: $br-extra
+			text-transform: none
+			font-size: 1.5em
+
+		&_extra
+			color: #fff
+
+	&__paragraph
+		@extend %bbx
+		padding: 0 20px
+		color: #fff
+		font-size: 0.9em
+
+	&__dollar
+		@extend %bbx
+		padding: 10px 20px
+		color: darken($br-main, 10%)
+		opacity: 0
+		transition: opacity 0.3s ease
+
+		&.is-visible
+			opacity: 1

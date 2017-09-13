@@ -1,7 +1,7 @@
-function f_calculate__ars(book) {
+function f_calculate__ars(boolean) {
 
 	var
-		book = book || false,
+		book = boolean || false,
 		tax = 50, // porcentaje
 		dollar = dollarConverted, // hacer dinámico
 
@@ -22,28 +22,105 @@ function f_calculate__ars(book) {
 	(product > 200) ? console.log('\nTené en cuenta que el precio del producto no debe superar los US$ 200\n\n') : console.log('');
 	(product < 4) ? console.log('\nSi... es increible pagar tanto por un producto de solo US$ 3\n\n') : console.log('');
 	(product === 0) ? f_layout__reset() : f_layout__results();
+
+	console.log('Precio del producto en US$: '+product.toFixed(2));
+	$('#log-product').html(product.toFixed(2));
+
+	console.log('Precio del envío en US$: '+shipping.toFixed(2));
+	$('#log-shipping').html(shipping.toFixed(2));
+
 	console.log('Dolar: '+dollar.toFixed(2));
-	console.log('Precio completo: '+price.toFixed(2));
+	$('#log-dollar').html(dollar.toFixed(2));
+
+	console.log('Precio competo: '+price_tax.toFixed(2));
+	$('#log-fullprice').html(price_tax.toFixed(2));
+
+	console.log('Franquicia US$: '+franchise.toFixed(2));
+	$('#log-franchise').html(franchise.toFixed(2));
+
 	console.log('Precio completo para impuestar con franquicia: '+price_tax.toFixed(2));
+	$('#log-franchisedprice').html(price_tax.toFixed(2));
+
 	console.log('Impuestos: '+tax_calc.toFixed(2));
+	$('#log-tax').html(tax_calc.toFixed(2));
+
 	console.log('Precio final en US$: '+(price + tax_calc).toFixed(2));
-	console.log('Precio final en AR$: '+(price + tax_calc)*dollar.toFixed(2));
+	$('#log-priceusd').html((price + tax_calc).toFixed(2));
+
+	console.log('Precio final en AR$: '+((price + tax_calc)*dollar).toFixed(2));
+	$('#log-pricears').html(((price + tax_calc)*dollar).toFixed(2));
+
 	console.log('Precio Correo Argentino en AR$: '+courier.toFixed(2));
+	$('#log-courrier').html(courier.toFixed(2));
+
 	console.log('TOTAL en AR$: '+ars.toFixed(2));
+	$('#log-totalars').html(ars.toFixed(2));
+	$('#price_final').text(ars.toFixed(2));
 
+}
 
-	return $('#price_final').text(ars.toFixed(2));
+function f_book__toggle() {
+	$('#book').toggleClass('is-selected');
+	if ($('#book').hasClass('is-selected')) {
+		$('#franchise').slideUp('fast');
+		$('#book').find('.material-icons').html('check_box');
+		f_calculate__ars(true);
+	} else {
+		$('#franchise').slideDown('fast');
+		$('#book').find('.material-icons').html('check_box_outline_blank');
+		f_calculate__ars();
+	}
+}
+
+function f_book_condition() {
+	if ($('#book').hasClass('is-selected')) {
+		f_calculate__ars(true);
+	} else {
+		f_calculate__ars();
+	}
 }
 
 function f_franchise__toggle() {
 	$('#franchise').toggleClass('is-selected');
-	f_calculate__ars();
+
+	if ($('#franchise').hasClass('is-selected')) {
+		$('#franchise').find('.material-icons').html('check_box');
+	} else {
+		$('#franchise').find('.material-icons').html('check_box_outline_blank');
+	}
+
+	f_book_condition();
+}
+
+function f_shipping__toggle() {
+	$('#shipping_price').toggleClass('is-selected');
+
+	if ($('#shipping_price').hasClass('is-selected')) {
+		$('.shipping_price-trigger').find('.material-icons').html('check_box');
+		$('.shipping_price-container').slideUp('fast');
+		$('#shipping_price').val('');
+		f_book_condition();
+	} else {
+		$('.shipping_price-trigger').find('.material-icons').html('check_box_outline_blank');
+		$('.shipping_price-container').slideDown('fast');
+	}
 }
 
 function f_layout__results() {
-	$('.c-step_second').addClass('is-visible');
+	$('.c-step_second, body').addClass('is-visible');
 	$('.c-step_first').removeClass('is-visible');
+	$('html, body').animate({scrollTop: $('.c-step_second').offset().top}, 500);
 }
+
+function f_enable__ok() {
+	var product = parseFloat($('#price_original').val());
+	if (product > 0) {
+		$('.c-product-price__ok').addClass('is-enabled');
+	} else {
+		$('.c-product-price__ok').removeClass('is-enabled');
+	}
+}
+
 function f_layout__reset() {
 	$('.c-step_first').addClass('is-visible');
 	$('.c-step_second').removeClass('is-visible');

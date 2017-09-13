@@ -1,0 +1,88 @@
+.c-details
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-direction: row
+	// background-color: red
+	@extend %bbx
+	padding: 20px
+	color: $br-main
+	border-bottom: 1px solid darken(#fff, 5%)
+
+	&_modifiers
+		background-color: darken($br-extra, 7%)
+		color: #fff
+		border-bottom: 1px solid darken($br-extra, 10%)
+
+		.c-details__text
+			width: 80%
+
+	&_results
+		color: darken($br-extra, 10%)
+
+	&__actions
+		width: 20%
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		text-align: right
+
+	&__text
+		width: 60%
+		display: flex
+		justify-content: flex-start
+		align-items: center
+
+	&__price
+		width: 40%
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		text-align: right
+
+		&::before
+			opacity: 0.5
+			content: ' '
+
+		&_usd
+			&::before
+				content: 'US$'
+				margin-right: 5px
+		&_ars
+			&::before
+				content: 'AR$'
+				margin-right: 5px
+
+	&__button
+		padding: 15px
+		margin-left: 10px
+		border: none
+		border-radius: 5px
+		font-size: 1em
+		outline: none
+		text-align: right
+		background-color: $br-extra
+
+	&__box
+		position: relative
+
+	&__uss
+		position: absolute
+		z-index: 1
+		top: 15px
+		left: 15px
+
+	&__input
+		position: relative
+		width: 100%
+		@extend %bbx
+		padding: 15px
+		background-color: transparentize(#fff, 0.9)
+		border-radius: 5px
+		border: none
+		font-size: 1em
+		outline: none
+		text-align: right
+
+		&::placeholder
+			color: transparentize(#fff, 0.5)
