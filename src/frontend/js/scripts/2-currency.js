@@ -1,8 +1,9 @@
-// Source: https://currencylayer.com/documentation
 var dollarConverted = 15.04;
+
+// Source: https://currencylayer.com/documentation
 // set endpoint and your access key
-endpoint = 'live';
-access_key = '4bdc5d6e264a66042e6aef653c5dce5f';
+// endpoint = 'live';
+// access_key = '4bdc5d6e264a66042e6aef653c5dce5f';
 
 // get the most recent exchange rates via the "live" endpoint:
 // $.ajax({
@@ -24,3 +25,11 @@ access_key = '4bdc5d6e264a66042e6aef653c5dce5f';
 //
 // 		}
 // });
+
+// Source: https://openexchangerates.org/
+$.get('https://openexchangerates.org/api/latest.json', {app_id: '8f20c082fbbd475a84792e488cd902b2', base: 'USD'}, function(data) {
+		console.log("1 USD " + data.rates.ARS + " ARS");
+		dollarConverted = data.rates.ARS;
+		document.getElementById('dollarConverted').innerHTML = dollarConverted;
+		$('.c-step__dollar').addClass('is-visible');
+});
