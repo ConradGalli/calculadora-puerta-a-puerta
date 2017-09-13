@@ -20,5 +20,5 @@ production
 #app.css
 #libs.css
 *.map
-app.js
-libs.js
+#app.js
+#libs.js
