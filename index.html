@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
 	<meta name="format-detection" content="telephone=no">
 
-	<title>Calculadora Puerta a Puerta y VEP para compras internacionales en Argentina - AFIP</title>
+	<title>Calculadora Puerta a Puerta AFIP</title>
 
 	<!-- NOTE: Meta data
 		Validate the metadata with:
@@ -28,7 +28,7 @@
 	<!-- Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Calculadora Puerta a Puerta y VEP para compras internacionales en Argentina - AFIP">
-	<meta property="og:title" content="Calculadora Puerta a Puerta y VEP para compras internacionales en Argentina - AFIP">
+	<meta property="og:title" content="Calculadora Puerta a Puerta AFIP">
 	<meta property="og:description" content="Calcul&#xE1; el costo de importaci&#xF3;n y el VEP del servicio Puerta a Puerta de la AFIP para compras internacionales en Argentina">
 	<meta property="og:image" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/metaimg.jpg">
 	<meta property="og:url" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/">
@@ -36,7 +36,7 @@
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:site" content="@lucasromerodb">
-	<meta property="twitter:title" content="Calculadora Puerta a Puerta y VEP para compras internacionales en Argentina - AFIP">
+	<meta property="twitter:title" content="Calculadora Puerta a Puerta AFIP">
 	<meta property="twitter:description" content="Calcul&#xE1; el costo de importaci&#xF3;n y el VEP del servicio Puerta a Puerta de la AFIP para compras internacionales en Argentina">
 	<meta property="twitter:image" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/metaimg.jpg">
 	<meta property="twitter:url" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/">
@@ -56,13 +56,13 @@
 	<meta name="theme-color" content="#0052cc">
 
 	<!-- NOTE: Styles & Fonts-->
-	<link rel="stylesheet" href="assets/css/libs.css?rev=1505516898107" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="assets/css/app.css?rev=1505516898037" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="assets/css/libs.css?rev=1505517716562" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="assets/css/app.css?rev=1505517716478" media="screen" title="no title" charset="utf-8">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
 	<!-- NOTE: Scripts -->
-	<script>try {console.log('%c\n\nCrafted by Lucas Romero Di Benedetto.\n\nFork me on GitHub:\nhttps://github.com/lucasromerodb/calculadora-puerta-a-puerta\n\nVisit my site: https://lucasromerodb.github.io/\n\nI live in Buenos Aires, Argentina. I\'m a Frontend Developer and ArchLinux user. I want to be a great programmer and game developer some day.\n\n', 'color: green');} catch (e) {}</script>
+	<script>try {console.log('%c\n\nCrafted by Lucas Romero Di Benedetto.\n\nFork me on GitHub:\nhttps://github.com/lucasromerodb/calculadora-puerta-a-puerta (MIT License)\n\nVisit my site: https://lucasromerodb.github.io/\n\nI live in Buenos Aires, Argentina. I\'m a Frontend Developer and ArchLinux user. I want to be a great programmer and game developer some day.\n\n', 'color: green');} catch (e) {}</script>
 
 	<!-- NOTE: Google Analytics (Seguimiento) -->
 	<script>
@@ -105,7 +105,7 @@
 
 
 		<div class="c-step c-step_first">
-			<img src="assets/img/ui/calculadora-puerta-a-puerta.png" alt="Logo" class="c-step__logo" title="Estoy ac&#xE1; para ayudarte :)">
+			<img src="assets/img/ui/logo.png" alt="Logo" class="c-step__logo" title="Estoy ac&#xE1; para ayudarte :)">
 			<h1 class="c-step__title c-step__title_main">Calculadora <br> Puerta a Puerta</h1>
 			<h3 class="c-step__title c-step__title_extra">¿Cuánto vas a gastar?</h3>
 			<div class="c-product-price">
@@ -125,7 +125,7 @@
 				<br><br>
 				<sup>(Esta app funciona únicamente con Correo Argentino)</sup>
 				<br>
-				Esta app se distribuye bajo una licencia <b><em>MIT License</em></b> y fue publicado como software open source en <a href="https://github.com/lucasromerodb/calculadora-puerta-a-puerta" target="_blank">GitHub</a>
+				Esta app se distribuye bajo la licencia <b><em>MIT License</em></b> y fue publicado como software open source en <a href="https://github.com/lucasromerodb/calculadora-puerta-a-puerta" target="_blank">GitHub</a>
 				<br><br>
 				<a href="https://lucasromerodb.github.io/" target="_blank" class="c-step__author" title="Visit&#xE1; mi sitio web &#x669;(^&#x1D17;^)&#x6F6;" onclick="ga(&apos;send&apos;, &apos;event&apos;, &apos;UX&apos;, &apos;Vista principal&apos;, &apos;Ver autor&apos;);">
 					<i class="material-icons md-18">face</i>
@@ -211,17 +211,17 @@
 				<div class="c-details__text">Total en AR$</div>
 				<div class="c-details__price c-details__price_ars" id="log-totalars">0</div>
 			</div>
-			<a href="#top" class="c-details__backtotop" onclick="ga(&apos;send&apos;, &apos;event&apos;, &apos;UX&apos;, &apos;Resultados&apos;, &apos;Volver arriba&apos;);">
+			<a href="#top" class="c-details__backtotop" onclick="f_reset();ga(&apos;send&apos;, &apos;event&apos;, &apos;UX&apos;, &apos;Resultados&apos;, &apos;Volver arriba&apos;);">
 				<span><i class="material-icons">keyboard_arrow_up</i></span>
-				<span>Volver arriba</span>
+				<span>Introducir un nuevo precio</span>
 			</a>
 
 		</div>
 	</article>
 
 	<!-- NOTE: Scripts -->
-	<script src="assets/js/libs.js?rev=1505516897991" charset="utf-8"></script>
-	<script src="assets/js/app.js?rev=1505516898077" charset="utf-8"></script>
+	<script src="assets/js/libs.js?rev=1505517716392" charset="utf-8"></script>
+	<script src="assets/js/app.js?rev=1505517716518" charset="utf-8"></script>
 
 </body>
 </html>

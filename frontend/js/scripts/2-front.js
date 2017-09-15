@@ -128,6 +128,13 @@ function f_enable__ok() {
 	}
 }
 
+function f_reset() {
+	$('#price_original').val('');
+	setTimeout(function() {
+		$('#price_original').focus();
+	},500)
+}
+
 function f_layout__reset() {
 	$('.c-step_first').addClass('is-visible');
 	$('.c-step_second').removeClass('is-visible');
