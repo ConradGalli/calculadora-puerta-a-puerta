@@ -15,7 +15,10 @@ function f_calculate__ars(boolean) {
 
 		tax_calc = (book === true) ? 0 : price_tax*(tax/100), // tipo de producto (si es un libro no lleva inpuestos)
 
-		ars = (price + tax_calc) * dollar + courier;
+		ars = (price + tax_calc) * dollar + courier,
+
+		dollarized = (ars/dollar),
+		inflation = dollarized*100/price;
 
 
 	console.log('\n\nCalculando...');
@@ -52,6 +55,10 @@ function f_calculate__ars(boolean) {
 
 	console.log('Precio Correo Argentino en AR$: '+courier.toFixed(2));
 	$('#log-courrier').html(courier.toFixed(2));
+
+	console.log('Total dolarizado: '+dollarized.toFixed(2));
+	console.log('Inflación: '+inflation.toFixed(2)+'%');
+	$('#log-inflation').html(inflation.toFixed(2)+'%');
 
 	console.log('TOTAL en AR$: '+ars.toFixed(2));
 	$('#log-totalars').html(ars.toFixed(2));
