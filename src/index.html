@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -30,28 +30,30 @@
 	<meta property="og:site_name" content="Calculadora Puerta a Puerta y VEP para compras internacionales en Argentina - AFIP">
 	<meta property="og:title" content="Calculadora Puerta a Puerta y VEP para compras internacionales en Argentina - AFIP">
 	<meta property="og:description" content="Calcul&#xE1; el costo de importaci&#xF3;n y el VEP del servicio Puerta a Puerta de la AFIP para compras internacionales en Argentina">
-	<meta property="og:image" content="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/metaimg.jpg">
-	<meta property="og:url" content="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/">
+	<meta property="og:image" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/metaimg.jpg">
+	<meta property="og:url" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:site" content="@lucasromerodb">
 	<meta property="twitter:title" content="Calculadora Puerta a Puerta y VEP para compras internacionales en Argentina - AFIP">
 	<meta property="twitter:description" content="Calcul&#xE1; el costo de importaci&#xF3;n y el VEP del servicio Puerta a Puerta de la AFIP para compras internacionales en Argentina">
-	<meta property="twitter:image" content="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/metaimg.jpg">
-	<meta property="twitter:url" content="http://lanzamientos-nike.dexter.com.ar/PROJECT_FOLDER/">
+	<meta property="twitter:image" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/metaimg.jpg">
+	<meta property="twitter:url" content="https://lucasromerodb.github.io/calculadora-puerta-a-puerta/">
+
+	<meta name="mobile-web-app-capable" content="yes">
 
 	<!-- NOTE: App color & img -->
 	<!-- Generate your favicons code and paste here - http://realfavicongenerator.net/ -->
-	<meta name="mobile-web-app-capable" content="yes">
-
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?rev=1505265962000">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?rev=1505265963000">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?rev=1505265963000">
-	<link rel="manifest" href="/manifest.json?rev=1505265963000">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg?rev=1505265963000" color="#0052cc">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=Gvk6Ogz99N">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=Gvk6Ogz99N">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=Gvk6Ogz99N">
+	<link rel="manifest" href="/manifest.json?v=Gvk6Ogz99N">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg?v=Gvk6Ogz99N" color="#0052cc">
+	<link rel="shortcut icon" href="/favicon.ico?v=Gvk6Ogz99N">
+	<meta name="msapplication-TileColor" content="#0052cc">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png?v=Gvk6Ogz99N">
 	<meta name="theme-color" content="#0052cc">
-	<!-- <meta name="theme-color" content="#0052cc"> -->
 
 	<!-- NOTE: Fonts -->
 
@@ -60,8 +62,6 @@
 	<link rel="stylesheet" href="assets/css/app.css?rev=1505446236134" media="screen" title="no title" charset="utf-8">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet"> -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet"> -->
 
 	<!-- NOTE: Scripts -->
 	<script>try {console.log('%c\n\nCrafted by Lucas Romero Di Benedetto.\n\nFork me on GitHub:\nhttps://github.com/lucasromerodb/calculadora-puerta-a-puerta\n\nVisit my site: https://lucasromerodb.github.io/\n\nI live in Buenos Aires, Argentina. I\'m a Frontend Developer and ArchLinux user. I want to be a great programmer and game developer some day.\n\n', 'color: green');} catch (e) {}</script>
@@ -98,22 +98,23 @@
 		<nav class="c-navigation is-visible">
 			<div class="wrapper wrapper_lg">
 				<span class="c-navigation__link" title="Compartilo en:"><i class="material-icons md-24">share</i></span>
-				<a href="#share" class="c-navigation__link c-navigation__link_facebook" title="Compartir en Facebook"> Facebook </a>
-				<a href="#share" class="c-navigation__link c-navigation__link_twitter" title="Compartir en Twitter"> Twitter </a>
-				<a href="#share" class="c-navigation__link c-navigation__link_whatsapp" title="Compartir en Whatsapp"> Whatsapp </a>
+				<a href="#share" class="c-navigation__link c-navigation__link_facebook" title="Compartir en Facebook" onclick="ga('send', 'event', 'UX', 'Compartir', 'Facebook');"> Facebook </a>
+				<a href="#share" class="c-navigation__link c-navigation__link_twitter" title="Compartir en Twitter" onclick="ga('send', 'event', 'UX', 'Compartir', 'Twitter');"> Twitter </a>
+				<a href="#share" class="c-navigation__link c-navigation__link_whatsapp" title="Compartir en Whatsapp" onclick="ga('send', 'event', 'UX', 'Compartir', 'Whatsapp');"> Whatsapp </a>
 			</div>
 		</nav>
 
 
 		<div class="c-step c-step_first">
+			<img src="assets/img/ui/calculadora-puerta-a-puerta.png" alt="Logo" class="c-step__logo" title="Estoy acá para ayudarte :)">
 			<h1 class="c-step__title c-step__title_main">Calculadora <br> Puerta a Puerta</h1>
 			<h3 class="c-step__title c-step__title_extra">¿Cuánto vas a gastar?</h3>
 			<div class="c-product-price">
 				<div class="c-product-price__box">
 					<label for="price_osmriginal" class="c-product-price__uss">US$</label>
-					<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00" onkeyup="f_enable__ok();">
+					<input type="number" name="product-price" value="" id="price_original" class="c-product-price__input" placeholder="0.00" title="Ingresá el precio en dólares del producto que vas a comprar" onkeyup="f_enable__ok();" onclick="ga('send', 'event', 'UX', 'Vista principal', 'Focus para ingresar precio');">
 				</div>
-				<button class="c-product-price__ok" onclick="f_calculate__ars(false);">
+				<button class="c-product-price__ok" title="Vamos a calcular esto B-)" onclick="f_calculate__ars(false);ga('send', 'event', 'UX', 'Vista principal', 'Ver resultados');">
 					<i class="material-icons md-24">done</i>
 				</button>
 			</div>
@@ -125,7 +126,7 @@
 				<br><br>
 				<sup>(Esta app funciona únicamente con Correo Argentino)</sup>
 				<br><br>
-				<a href="https://lucasromerodb.github.io/" target="_blank" class="c-step__author">
+				<a href="https://lucasromerodb.github.io/" target="_blank" class="c-step__author" title="Visitá mi sitio web ٩(^ᴗ^)۶" onclick="ga('send', 'event', 'UX', 'Vista principal', 'Ver autor');">
 					<i class="material-icons md-18">face</i>
 					<span> Lucas Romero Di Benedetto </span>
 				</a>
@@ -135,12 +136,10 @@
 		<div class="c-step c-step_second">
 			<div class="c-price-header">
 				<span class="c-price-header__title">Costo total estimado</span>
-				<span id="price_final" class="c-price-header__price">0.00</span>
+				<span id="price_final" class="c-price-header__price" title="Esto es lo que vas a pagar... si, es ridículo >:V">0.00</span>
 			</div>
 
-
-
-			<div class="c-details c-details_modifiers shipping_price-trigger" onclick="f_shipping__toggle()">
+			<div class="c-details c-details_modifiers shipping_price-trigger" onclick="f_shipping__toggle();ga('send', 'event', 'UX', 'Resultados', 'El precio incluye el envío');">
 				<div class="c-details__text">El precio incluye el envío</div>
 				<div class="c-details__actions"><i class="material-icons">check_box</i></div>
 			</div>
@@ -149,16 +148,16 @@
 					<label for="price_osmriginal" class="c-details__uss">US$</label>
 					<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00">
 				</div>
-				<button type="button" name="button" class="c-details__button" onclick="f_book_condition();">Calcular</button>
+				<button type="button" name="button" class="c-details__button" onclick="f_book_condition();;ga('send', 'event', 'UX', 'Resultados', 'Calcular envío');">Calcular</button>
 			</div>
 
 
 
-			<div class="c-details c-details_modifiers" id="book" onclick="f_book__toggle()">
+			<div class="c-details c-details_modifiers" id="book" title="Los libros no pagan el impuesto del 50%" onclick="f_book__toggle();ga('send', 'event', 'UX', 'Resultados', 'Esta compra es un libro');">
 				<div class="c-details__text">Esta compra es un libro</div>
 				<div class="c-details__actions"><i class="material-icons">check_box_outline_blank</i></div>
 			</div>
-			<div class="c-details c-details_modifiers" id="franchise" onclick="f_franchise__toggle()">
+			<div class="c-details c-details_modifiers" title="Si es tu primer compra del año, los impuestos tienen una bonificación de US$ 25 sobre el total de la compra." id="franchise" onclick="f_franchise__toggle();ga('send', 'event', 'UX', 'Resultados', 'Es mi primer compra del año');">
 				<div class="c-details__text">Es mi primer compra del año</div>
 				<div class="c-details__actions"><i class="material-icons">check_box_outline_blank</i></div>
 			</div>
@@ -211,7 +210,7 @@
 				<div class="c-details__text">Total en AR$</div>
 				<div class="c-details__price c-details__price_ars" id="log-totalars">0</div>
 			</div>
-			<a href="#top" class="c-details__backtotop">
+			<a href="#top" class="c-details__backtotop" onclick="ga('send', 'event', 'UX', 'Resultados', 'Volver arriba');">
 				<span><i class="material-icons">keyboard_arrow_up</i></span>
 				<span>Volver arriba</span>
 			</a>

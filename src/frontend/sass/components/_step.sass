@@ -7,24 +7,33 @@
 
 	&_second
 		height: 1px
-		overflow-y: hidden
 		// background-color: lighten($br-main, 5%)
+		@extend %bbx
 		background-color: #fff
 		visibility: hidden
 		// padding-top: 20px
 		// padding-bottom: 20px
 		opacity: 0
+		overflow-y: hidden
 		transition: opacity 0.7s ease 0s
 
 		+responsive(641,min)
-			border-radius: 6px
+			border-radius: 4px
 			margin-bottom: 40px
+			padding-right: 20px
+			padding-left: 20px
 
 		&.is-visible
 			height: auto
 			overflow-y: auto
 			visibility: visible
 			opacity: 1
+
+	&__logo
+		@extend %bbx
+		padding: 10px 20px
+		max-width: 120px
+		margin-bottom: 10px
 
 	&__title
 		@extend %bbx
