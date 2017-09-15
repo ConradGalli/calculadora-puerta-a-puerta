@@ -1,4 +1,4 @@
-var dollarConverted = 15.04;
+var dollarConverted = 16.04;
 
 // Source: https://currencylayer.com/documentation
 // set endpoint and your access key
