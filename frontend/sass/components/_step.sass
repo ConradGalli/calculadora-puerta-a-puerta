@@ -58,6 +58,14 @@
 		font-size: 0.9em
 		line-height: 1.5em
 
+		a
+			text-decoration: underline
+			color: $br-main
+
+			&:hover,
+			&:visited
+				color: $br-main
+
 	&__dollar
 		@extend %bbx
 		padding: 10px 20px
@@ -73,7 +81,7 @@
 		justify-content: flex-start
 		align-items: center
 		color: $br-main
-		text-decoration: none
+		text-decoration: none !important
 
 		&:hover
 			text-decoration: none
@@ -83,3 +91,4 @@
 
 		.material-icons
 			margin-right: 10px
+			text-decoration: none
