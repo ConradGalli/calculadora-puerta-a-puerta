@@ -1,4 +1,4 @@
-var dollarConverted = 15.04;
+var dollarConverted = 16.04;
 
 // Source: https://openexchangerates.org/
 $.get('https://openexchangerates.org/api/latest.json', {app_id: '8f20c082fbbd475a84792e488cd902b2', base: 'USD'}, function(data) {
