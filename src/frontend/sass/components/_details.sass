@@ -3,7 +3,6 @@
 	justify-content: space-between
 	align-items: center
 	flex-direction: row
-	// background-color: red
 	@extend %bbx
 	padding: 20px
 	color: $br-main
@@ -22,6 +21,28 @@
 		padding-top: 30px
 		padding-bottom: 30px
 		background-color: transparentize($br-extra, 0.9)
+
+	&__backtotop
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		text-decoration: none
+		width: 100%
+		padding-top: 10px
+		padding-bottom: 30px
+		background-color: transparentize($br-extra, 0.9)
+		color: $br-main
+		text-align: center
+		font-size: 0.8em
+
+		&:hover
+			text-decoration: none
+			color: $br-main
+
+		span
+			display: block
+			width: 100%
 
 	&__actions
 		width: 20%

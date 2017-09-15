@@ -16,6 +16,10 @@
 		opacity: 0
 		transition: opacity 0.7s ease 0s
 
+		+responsive(641,min)
+			border-radius: 6px
+			margin-bottom: 10px
+
 		&.is-visible
 			height: auto
 			overflow-y: auto
@@ -54,3 +58,19 @@
 
 		&.is-visible
 			opacity: 1
+
+	&__author
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		color: $br-main
+		text-decoration: none
+
+		&:hover
+			text-decoration: none
+
+		span
+			text-decoration: underline
+
+		.material-icons
+			margin-right: 10px
