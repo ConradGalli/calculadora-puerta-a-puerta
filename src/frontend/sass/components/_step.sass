@@ -30,23 +30,25 @@
 		margin-bottom: 15px
 
 		&_main
-			color: $br-extra
+			color: $br-main
 			text-transform: none
-			font-size: 1.5em
+			font-size: 2em
 
 		&_extra
-			color: #fff
+			color: $br-extra
 
 	&__paragraph
 		@extend %bbx
-		padding: 0 20px
-		color: #fff
+		padding: 0 20px 10px 20px
+		margin-bottom: 20px
+		color: $br-main
 		font-size: 0.9em
+		line-height: 1.5em
 
 	&__dollar
 		@extend %bbx
 		padding: 10px 20px
-		color: darken($br-main, 10%)
+		color: transparentize($br-main, 0.4)
 		opacity: 0
 		transition: opacity 0.3s ease
 

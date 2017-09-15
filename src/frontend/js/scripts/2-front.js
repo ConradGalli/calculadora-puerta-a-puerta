@@ -18,7 +18,7 @@ function f_calculate__ars(boolean) {
 		ars = (price + tax_calc) * dollar + courier,
 
 		dollarized = (ars/dollar),
-		inflation = dollarized*100/price;
+		inflation = dollarized*100/price-100;
 
 
 	console.log('\n\nCalculando...');
@@ -131,4 +131,11 @@ function f_enable__ok() {
 function f_layout__reset() {
 	$('.c-step_first').addClass('is-visible');
 	$('.c-step_second').removeClass('is-visible');
+}
+
+function f_keypress__enter(e) {
+	if(e.which == 13) {
+			console.log('Enter...');
+			f_book_condition();
+	}
 }

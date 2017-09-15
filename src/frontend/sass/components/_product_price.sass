@@ -15,15 +15,17 @@
 		@extend %bbx
 		border: none
 		border-radius: 50px
-		background-color: darken($br-main, 3%)
-		color: darken($br-main, 7%)
+		background-color: $br-info
+		color: transparent
 		text-align: center
 		text-transform: uppercase
 		outline: none
-		transition: background-color 0.2s ease, color 0.2s ease
+		transform: scale(0)
+		transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease
 		pointer-events: none
 
 		&.is-enabled
+			transform: scale(1)
 			background-color: $br-extra
 			// +bg-gradient-l2r($br-extra, adjust-hue($br-extra, -20deg))
 			color: #fff
@@ -38,21 +40,23 @@
 		background-color: transparent
 		border-radius: 200px
 		align-items: center
-		transform: scaleX(0.9)
+		transform: scaleX(0.8) translateX(100px)
 		opacity: 0
-		transition: transform 0.6s ease 0.2s, opacity 0.3s ease 0.2s, background-color 0.9s ease 0.2s, border-radius 0.7s ease 0s
+		transition: transform 0.6s ease 0.2s, opacity 0.3s ease 0.2s, background-color 0.9s ease 0.2s, border-radius 0.7s ease 0s, box-shadow 0.2s ease
 
 		&.is-visible
-			background-color: darken($br-main, 3%)
-			border-radius: 5px
-			transform: scaleX(1)
+			// background-color: $br-info
+			// background-color: transparentize($br-main, 0.9)
+			box-shadow: inset 0	0 0 1px $br-main
+			border-radius: 4px
+			transform: scaleX(1) translateX(0)
 			opacity: 1
 
 	&__uss
 		width: 100px
 		text-align: center
 		font-size: 2em
-		color: #fff
+		color: $br-main
 
 	&__input
 		@extend %bbx
@@ -63,18 +67,18 @@
 		border: none
 		outline: none
 		font-size: 2em
-		color: #fff
+		color: $br-main
 		text-align: right
 
 		&::placeholder
-			color: lighten($br-main, 1%)
+			color: transparentize($br-main, 0.8)
 
 	&__label
 		display: block
 		text-align: right
 		padding-top: 20px
 		padding-bottom: 20px
-		color: darken($br-info, 20%)
+		color: $br-info
 		font-size: 1.2em
 
 	&__buttons

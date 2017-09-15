@@ -19,3 +19,9 @@ $(document).ready(function() {
 	// f_ga__bounce_time('forgetful', '(10m) Mmm.. bueno! Tal vez tu usuario haya olvidado el navegador abierto, está aquí hace más de 10 min.', 900000);
 
 });
+
+$(document).keypress(function(e) {
+		if ($('.c-product-price__ok').is(':focus')) {
+			f_keypress__enter(e);
+		}
+});

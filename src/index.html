@@ -51,6 +51,7 @@
 	<link rel="manifest" href="/manifest.json?rev=1505265963000">
 	<link rel="mask-icon" href="/safari-pinned-tab.svg?rev=1505265963000" color="#0052cc">
 	<meta name="theme-color" content="#0052cc">
+	<!-- <meta name="theme-color" content="#0052cc"> -->
 
 	<!-- NOTE: Fonts -->
 
@@ -58,7 +59,7 @@
 	<link rel="stylesheet" href="assets/css/libs.css?rev=1505433286037" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="assets/css/app.css?rev=1505433285957" media="screen" title="no title" charset="utf-8">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet"> -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet"> -->
 
@@ -93,27 +94,27 @@
 	<span class="js-gaActivity__bounce_forgetfulTime" onclick="ga(&apos;send&apos;, &apos;event&apos;, &apos;Actividad&apos;, &apos;Tiempo&apos;, &apos;(10m) Mmm.. bueno! Tal vez tu usuario haya olvidado el navegador abierto, est&#xE1; aqu&#xED; hace m&#xE1;s de 10 min.&apos;);"></span>
 	<!-- XXX: ACTIVITY EVENTS -->
 
-
-
 	<section class="wrapper wrapper_xs">
 		<nav class="c-navigation is-visible">
 			<div class="wrapper wrapper_lg">
-				<img src="assets/img/ui/calculadora-puerta-a-puerta_w.png" alt="" class="c-navigation__logo">
-				<span class="c-navigation__links">
-					<!-- <a href="#share">
-						<i class="material-icons md-24">share</i>
-					</a> -->
-					<a href="https://lucasromerodb.github.io/" target="_blank">
+				<!-- <img src="assets/img/ui/calculadora-puerta-a-puerta.png" alt="" class="c-navigation__logo"> -->
+				<!-- <span class="c-navigation__links"> -->
+
+					<span class="c-navigation__link" title="Compartilo en:"><i class="material-icons md-24">share</i></span>
+					<!-- <span class="c-navigation__link">Compartilo!</span> -->
+					<a href="#share" class="c-navigation__link c-navigation__link_facebook" title="Compartir en Facebook"> Facebook </a>
+					<a href="#share" class="c-navigation__link c-navigation__link_twitter" title="Compartir en Twitter"> Twitter </a>
+					<a href="#share" class="c-navigation__link c-navigation__link_whatsapp" title="Compartir en Whatsapp"> Whatsapp </a>
+					<!-- <a href="https://lucasromerodb.github.io/" target="_blank" class="c-navigation__link">
 						<i class="material-icons md-24">face</i>
-					</a>
-				</span>
+					</a> -->
+				<!-- </span> -->
 			</div>
 		</nav>
 
-		<h1 class="c-step__title c-step__title_main">Calculadora puerta a puerta</h1>
-		<p class="c-step__paragraph">Esta app te ayuda a calcular el costo final de importación de tus futuras compras internacionales a través del el servicio "<b><em>Puerta a Puerta</em></b>" de la AFIP. <br>Conocé todos los detalles del proceso y <b><em>obtené el costo estimado del VEP</em></b>, que no te queden dudas!<br><br><sup>(Esta app funciona únicamente con Correo Argentino)</sup></p>
 
 		<div class="c-step c-step_first">
+			<h1 class="c-step__title c-step__title_main">Calculadora <br> Puerta a Puerta</h1>
 			<h3 class="c-step__title c-step__title_extra">¿Cuánto vas a gastar?</h3>
 			<div class="c-product-price">
 				<div class="c-product-price__box">
@@ -125,9 +126,10 @@
 				</button>
 			</div>
 			<div class="c-step__dollar">Precio del dólar: AR$ <span id="dollarConverted">12.345678</span></div>
+			<p class="c-step__paragraph">Esta app te ayuda a calcular el costo final de importación de tus futuras compras internacionales a través del el servicio "<b><em>Puerta a Puerta</em></b>" de la AFIP. <br>Conocé todos los detalles del proceso y <b><em>obtené el costo estimado del VEP</em></b>, que no te queden dudas!<br><br><sup>(Esta app funciona únicamente con Correo Argentino)</sup></p>
 		</div>
 
-		<div class="c-step c-step_second is-visible">
+		<div class="c-step c-step_second">
 			<div class="c-price-header">
 				<span class="c-price-header__title">Costo total estimado</span>
 				<span id="price_final" class="c-price-header__price">0.00</span>
