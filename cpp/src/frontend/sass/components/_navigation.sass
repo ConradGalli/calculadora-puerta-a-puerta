@@ -1,0 +1,42 @@
+.c-navigation
+	@extend %bbx
+	position: fixed
+	z-index: 100
+	bottom: 0
+	left: 0
+	width: 100%
+	min-height: $nav-height
+	background-color: #fff
+	box-shadow: 0 -3px 20px darken($br-gray-light, 10%)
+	transition: transform 0.3s ease
+
+	&.has-keyboard
+		transform: translateY(100%)
+
+	.wrapper
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-direction: row
+		min-height: $nav-height
+
+	&__item
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		width: 100%
+		text-decoration: none
+		color: $br-gray-dark
+
+		&:hover,
+		&:focus,
+		&:visited
+			text-decoration: none
+
+		&.is-active
+			color: $br-main
+
+	&__label
+		display: none
+		padding-top: 2px

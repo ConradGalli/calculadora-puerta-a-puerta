@@ -1,0 +1,72 @@
+.c-biginput
+	@extend %bbx
+	padding: 20px
+	display: block
+	width: 100%
+	transform: translateY(70%)
+	transition: transform 0.2s ease, padding 0.2s ease
+
+	&.is-active
+		transform: translateY(0)
+		padding: 0
+
+		.c-biginput__box
+			height: 110px
+			padding: 30px
+
+	&__box
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-direction: row
+		width: 100%
+		height: 80px
+		@extend %bbx
+		padding: 20px
+		background-color: #fff
+		border-radius: 4px
+		box-shadow: 0 3px 10px darken($br-gray-light, 10%)
+		transition: height 0.2s ease, padding 0.2s ease
+
+	&__currency
+		color: $br-gray-dark
+		font-size: 1.4em
+
+	&__input
+		max-width: 170px
+		height: 40px
+		text-align: right
+		border: none
+		font-size: 2.3em
+		color: $br-extra
+		outline: none
+
+		&::placeholder
+			color: $br-gray-dark
+
+	&__ok
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 40px
+		height: 40px
+		background-color: $br-gray-dark
+		border-radius: 25px
+		color: #fff
+		transition: background-color 0.3s ease, transform 0.3s
+
+		&.is-enabled
+			background-color: $br-main
+			animation: animateBiginputToTop 1s infinite ease
+
+	&__dollar
+		padding-top: 20px
+		padding-bottom: 20px
+		color: $br-gray-dark
+		text-align: center
+
+@keyframes animateBiginputToTop
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(1.15)
