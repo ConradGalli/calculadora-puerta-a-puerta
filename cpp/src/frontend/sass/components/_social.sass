@@ -1,29 +1,40 @@
 .c-social
-  @extend %clearfix
-  display: flex
-  align-items: center
-  flex-direction: row
-  justify-content: space-between
-  // text-align: center
+	padding-top: 25px
+	padding-bottom: 25px
+	text-align: center
 
-  &__icon
-    font-size: 1.5em
+	&__title
+		display: block
+		text-align: center
+		color: $br-gray-dark
+		margin-bottom: 20px
 
-  &__button
-    display: flex
-    align-items: center
+	&__wrapper
+		@extend %clearfix
+		display: flex
+		align-items: center
+		flex-direction: row
+		justify-content: space-between
 
-    &:not(:first-child)
-      margin-left: 15px
+	&__icon
+		font-size: 1.5em
 
-    &_facebook
-      color: #3b5998
+	&__button
+		display: flex
+		align-items: center
+		color: $br-gray-dark
 
-    &_twitter
-      color: #1da1f2
+		&:not(:first-child)
+			margin-left: 15px
 
-    &_whatsapp
-      display: flex
-      color: #25d366
-      +responsive(641,min)
-        display: none
+		&_facebook
+			// color: #3b5998
+
+		&_twitter
+			// color: #1da1f2
+
+		&_whatsapp
+			display: flex
+			// color: #25d366
+			+responsive(641,min)
+				display: none

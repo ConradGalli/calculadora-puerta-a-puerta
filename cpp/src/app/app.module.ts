@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { CalculateComponent } from './calculate/calculate.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { AboutComponent } from './about/about.component';
+import { SocialComponent } from './social/social.component';
 
 const appRoutes: Routes = [
   { path: '', component: CalculateComponent },
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     NavigationComponent,
     CalculateComponent,
     TutorialComponent,
-    AboutComponent
+    AboutComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,

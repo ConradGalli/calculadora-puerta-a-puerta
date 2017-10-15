@@ -12,6 +12,8 @@ $(document).ready(function() {
 		if ($.trim($('#price_original').val()) === '') {
 			$('.c-biginput').removeClass('is-active');
 			$('.c-logo_home').removeClass('is-disabled');
+			$('.l-home__body').fadeIn();
+			$('.c-biginput__loading').removeClass('is-enabled');
 		}
 	});
 

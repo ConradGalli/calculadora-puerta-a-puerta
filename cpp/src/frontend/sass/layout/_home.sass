@@ -1,0 +1,19 @@
+.l-home
+	&__body
+		position: relative
+		top: 100px
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+
+		.cta
+			+responsive(641, min)
+				display: none
+
+	&__explanation
+		max-width: 80%
+		color: $br-gray-dark
+		font-size: 1.1em
+		text-align: center
+		margin-bottom: 30px

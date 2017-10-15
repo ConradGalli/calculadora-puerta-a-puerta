@@ -1,143 +1,156 @@
 @mixin cta-hover($color)
-  background-color: darken($color, 5%)
+	background-color: darken($color, 5%)
 
 @mixin cta-active($color)
-  background-color: darken($color, 10%)
+	background-color: darken($color, 10%)
 
 button.cta
-  border: none
+	border: none
 
 .cta
-  @extend %bbx
-  display: inline-block
-  min-width: 180px
-  padding: 1rem 1rem
+	@extend %bbx
+	display: flex
+	align-items: center
+	justify-content: space-between
+	flex-direction: row
+	min-width: 180px
+	padding: 1rem 1rem
 
-  box-shadow: 0 2px 10px transparentize(#000, 0.95)
-  background-color: $ne-60
-  border-radius: 3px
-  cursor: pointer
+	box-shadow: 0 2px 10px transparentize(#000, 0.95)
+	background-color: $ne-60
+	border-radius: 3px
+	cursor: pointer
 
-  font-family: $ft-base
-  color: #fff
-  text-transform: uppercase
-  text-decoration: none
-  font-size: 1em
-  text-align: center
+	font-family: $ft-base
+	color: #fff
+	text-decoration: none
+	font-size: 1em
+	text-align: center
 
-  transition: all 0.15s ease-in-out 0s
-  outline: none
+	transition: all 0.15s ease-in-out 0s
+	outline: none
 
-  &:hover,
-  &:active
-    text-decoration: none
+	&:hover,
+	&:active
+		text-decoration: none
 
-  &:hover
-    @include cta-hover($ne-60)
+	&:hover
+		@include cta-hover($ne-60)
 
-  &:active
-    @include cta-active($ne-60)
-
-
-
-  &_xs
-    padding: 0.4rem 0.3rem
-    font-size: 0.8em
-
-  &_sm
-    padding: 0.6rem 0.6rem
-
-  &_lg
-    padding: 1.3rem 1.3rem
+	&:active
+		@include cta-active($ne-60)
 
 
-  &_base
-    background-color: #000
-    color: #fff
-    // border-radius: 3px
-    &:hover
-      background-color: lighten(#000, 20%)
 
-    &.is-active
-      background-color: #fff
-      color: #000
+	&_xs
+		padding: 0.4rem 0.3rem
+		font-size: 0.8em
 
-  &_base_outline
-    background-color: transparent
-    color: #000
-    box-shadow: inset 0 0 0 1px #000
-    // border-radius: 3px
-    &:hover
-      background-color: transparent
+	&_sm
+		padding: 0.6rem 1rem
 
-    &.is-active
-      box-shadow: inset 0 0 0 4px #000
+	&_lg
+		padding: 1.3rem 1.3rem
 
-  &_block
-    width: 100%
 
-  &_success
-    background-color: $nf-success
-    color: lighten($nf-success, 50%)
-    &:hover
-      @include cta-hover($nf-success)
-    &:active
-      @include cta-active($nf-success)
+	&_base
+		background-color: #000
+		color: #fff
+		// border-radius: 3px
+		&:hover
+			background-color: lighten(#000, 20%)
 
-  &_main
-    background-color: $br-main
-    color: lighten($br-main, 50%)
-    &:hover
-      @include cta-hover($br-main)
-    &:active
-      @include cta-active($br-main)
+		&.is-active
+			background-color: #fff
+			color: #000
 
-  &_extra
-    background-color: $br-extra
-    color: lighten($br-extra, 50%)
-    &:hover
-      @include cta-hover($br-extra)
-    &:active
-      @include cta-active($br-extra)
+	&_base_outline
+		background-color: transparent
+		color: #000
+		box-shadow: inset 0 0 0 1px #000
+		// border-radius: 3px
+		&:hover
+			background-color: transparent
 
-  &_info
-    background-color: $br-info
-    color: lighten($br-info, 50%)
-    &:hover
-      @include cta-hover($br-info)
-    &:active
-      @include cta-active($br-info)
+		&.is-active
+			box-shadow: inset 0 0 0 4px #000
 
-  &_transparent
-    background-color: transparent
-    color: lighten(#000, 20%)
-    &:hover
-      background-color: transparent
-      color: lighten(#000, 10%)
-    &:active
-      background-color: transparent
+	&_block
+		width: 100%
 
-  &_selection
-    min-width: 80px
-    background: #fff url('../img/ui/select__arrow--gray.svg') right center no-repeat
-    border-radius: 2px
-    text-align: left
-    padding: 0.5rem 0.5rem
-    color: #000
-    font-size: 75%
-    // text-transform: capitalize
-    border: 1px solid darken(#fff, 10%)
-    box-shadow: none
+	&_success
+		background-color: $nf-success
+		color: lighten($nf-success, 50%)
+		&:hover
+			@include cta-hover($nf-success)
+		&:active
+			@include cta-active($nf-success)
 
-    &::-ms-expand
-      display: none
+	&_main
+		background-color: $br-main
+		color: lighten($br-main, 50%)
+		&:hover
+			@include cta-hover($br-main)
+		&:active
+			@include cta-active($br-main)
 
-    +responsive(768)
-      min-width: 80px
-      padding: 0.5rem 0.5rem
+	&_extra
+		background-color: $br-extra
+		color: lighten($br-extra, 50%)
+		&:hover
+			@include cta-hover($br-extra)
+		&:active
+			@include cta-active($br-extra)
 
-    &:hover,
-    &:active
-      color: #000
-      background: #fff url('../img/ui/select__arrow--gray.svg') right center no-repeat
-      box-shadow: 0 10px 20px -10px transparentize(#000, 0.7)
+	&_info
+		background-color: $br-info
+		color: lighten($br-info, 50%)
+		&:hover
+			@include cta-hover($br-info)
+		&:active
+			@include cta-active($br-info)
+
+	&_transparent
+		background-color: transparent
+		color: lighten(#000, 20%)
+		&:hover
+			background-color: transparent
+			color: lighten(#000, 10%)
+		&:active
+			background-color: transparent
+
+	&_outline
+		background-color: transparent
+		box-shadow: 0 0 0 1px $br-gray-dark
+		border-radius: 100px
+		color: $br-gray-dark
+
+		&:hover
+			background-color: transparent
+			box-shadow: 0 0 0 1px $br-extra
+			color: $br-extra
+
+	&_selection
+		min-width: 80px
+		background: #fff url('../img/ui/select__arrow--gray.svg') right center no-repeat
+		border-radius: 2px
+		text-align: left
+		padding: 0.5rem 0.5rem
+		color: #000
+		font-size: 75%
+		// text-transform: capitalize
+		border: 1px solid darken(#fff, 10%)
+		box-shadow: none
+
+		&::-ms-expand
+			display: none
+
+		+responsive(768)
+			min-width: 80px
+			padding: 0.5rem 0.5rem
+
+		&:hover,
+		&:active
+			color: #000
+			background: #fff url('../img/ui/select__arrow--gray.svg') right center no-repeat
+			box-shadow: 0 10px 20px -10px transparentize(#000, 0.7)

@@ -1,20 +1,62 @@
 <div class="c-logo c-logo_home">
 	<img src="./assets/img/logos/logo__free_color.svg" alt="Logo">
 </div>
-<div class="c-biginput" onclick="f_animateBiginputToTop();">
+<div class="c-biginput">
 	<div class="c-biginput__box">
-		<label class="c-biginput__currency" for="price_original">US$</label>
-		<input type="number" name="productvalue" value="" placeholder="0.00" id="price_original" class="c-biginput__input" onkeyup="f_setBiginputValidation($(this));">
+		<label class="c-biginput__currency" for="price_original" onclick="f_animateBiginputToTop();">US$</label>
+		<input type="number" name="productvalue" value="" placeholder="0.00" id="price_original" class="c-biginput__input" onkeyup="f_setBiginputValidation($(this));" onclick="f_animateBiginputToTop();">
 		<div class="c-biginput__ok"><i class="material-icons">check</i></div>
 	</div>
 	<div class="c-biginput__dollar">Dolar: AR$<span id="dollarConverted">17.54</span></div>
+	<div class="c-biginput__loading">
+		<span class="c-biginput__progress c-biginput__progress_a"></span>
+		<span class="c-biginput__progress c-biginput__progress_b"></span>
+	</div>
 </div>
 
-<article class="">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit optio hic non ipsam facere ipsa saepe veniam ex veritatis architecto tempore, reiciendis. Esse expedita vero, voluptate, earum sapiente quia. Pariatur!
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit optio hic non ipsam facere ipsa saepe veniam ex veritatis architecto tempore, reiciendis. Esse expedita vero, voluptate, earum sapiente quia. Pariatur!
+<article class="l-home__body">
+	<p class="l-home__explanation">
+		Ingresá el monto del producto que vas a importar y la Calculadora Puerta a Puerta te va a decir cuanto vas a gastar en pesos argentinos.
+	</p>
+	<button class="cta cta_sm cta_outline" data-modal="description" onclick="f_modal__trigger($(this),true);"><i class="material-icons">flash_on</i> Crear un acceso directo</button>
+	<app-social></app-social>
 </article>
 
+<div class="c-modal c-modal_description">
+	<div class="c-modal__body">
+		<div class="c-modal__header">
+			<div class="wrapper">
+				<div class="c-modal__close c-modal__close_desktop" data-modal="description" onclick="f_modal__trigger($(this));">
+					<i class="icon-left-open"></i> Volver
+				</div>
+			</div>
+		</div>
+		<div class="c-modal__container c-modal__container_xl">
+			<span class="c-modal__title">Crear un acceso directo</span>
+			<div class="c-modal__description">
+				<p>
+					Agregá esta web-app al inicio de tu smartphone.   <br> <br>
+
+					Ventajas: <br>
+					- Acceso instantáneo  <br>
+					- No ocupa espacio de almacenamiento en tu smartphone <br>
+					- Mejora de performance <br>
+					<br>
+					Seguí los pasos de abajo, es muy fácil!
+				</p>
+				<h4>1 - Hacé click en los puntitos de tu navegador para abrir el menú.</h4>
+				<img src="./assets/img/ui/shortcut__location-bar.png" alt="Abrir el menú">
+				<h4>2 - Elejí la opción "Añadir a pantalla de inicio"</h4>
+				<img src="./assets/img/ui/shortcut__menu.png" alt="Agregar al inicio">
+				<img src="./assets/img/ui/shortcut__modal.png" alt="Elegir un nombre y agregar">
+			</div>
+		</div>
+	</div>
+	<div class="c-modal__close c-modal__close_mobile" data-modal="description" onclick="f_modal__trigger($(this));">
+		<i class="icon-left-open"></i>
+		<span>Volver</span>
+	</div>
+</div>
 
 <app-navigation></app-navigation>
 <!-- NOTE: On load trick --> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQIW2NgYAAAAAMAAdzsfUgAAAAASUVORK5CYII=" class="h-hidden" onload="f_detectPageAndApplyToNav('calculate');">

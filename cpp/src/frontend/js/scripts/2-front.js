@@ -18,14 +18,21 @@ function f_setBiginputValidation(el) {
 }
 
 function f_animateBiginputToTop() {
-	$('.c-biginput').addClass('is-active');
-	$('.c-logo_home').addClass('is-disabled');
+	if (!$('.c-biginput').hasClass('is-active')) {
+		$('.c-biginput').addClass('is-active');
+		$('.c-logo_home').addClass('is-disabled');
+		$('.l-home__body').fadeOut(100);
+		$('.c-biginput__loading').addClass('is-enabled');
+	}
 }
 
 function f_setNavVisibility() {
-	if ($(window).height() < 390) {
+	if ($(window).height() < 600) {
 		$('.c-navigation').hide().addClass('has-keyboard');
 	} else {
 		$('.c-navigation').show().removeClass('has-keyboard');
+		if ($.trim($('#price_original').val()) === '') {
+			$('#price_original').blur();
+		}
 	}
 }

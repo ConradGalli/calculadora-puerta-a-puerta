@@ -1,5 +1,5 @@
 $(window).on('resize', function() {
-	$('.c-modal').css('width', $(window).width());
+	// $('.c-modal').css('width', $(window).width());
 	f_setNavVisibility()
 });
 
