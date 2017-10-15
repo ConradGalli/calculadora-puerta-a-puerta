@@ -27,7 +27,10 @@ function f_animateBiginputToTop() {
 }
 
 function f_setNavVisibility() {
-	if ($(window).height() < 600) {
+	var newViewportHeight = $(window).height();
+	console.log('VH Nueov: '+newViewportHeight);
+
+	if (newViewportHeight < viewportHeight) {
 		$('.c-navigation').hide().addClass('has-keyboard');
 	} else {
 		$('.c-navigation').show().removeClass('has-keyboard');

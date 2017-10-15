@@ -11,7 +11,7 @@
 		padding: 0
 
 		.c-biginput__box
-			height: 110px
+			height: $hero-height
 			padding: 30px
 
 	&__box
@@ -53,11 +53,17 @@
 		background-color: $br-gray-dark
 		border-radius: 25px
 		color: #fff
+		text-decoration: none
 		transition: background-color 0.3s ease, transform 0.3s
+		pointer-events: none
+
+		&:hover
+			text-decoration: none
 
 		&.is-enabled
 			background-color: $br-main
 			animation: animateBiginputToTop 1s infinite ease
+			pointer-events: auto
 
 	&__dollar
 		padding-top: 20px
@@ -96,10 +102,10 @@
 @keyframes animateBiginputToTop
 	0%
 		transform: scale(1)
-		margin-left: 0
-		margin-right: 0
-	100%
+	50%
 		transform: scale(1.15)
+	100%
+		transform: scale(1)
 
 @keyframes animateLoadingA
 	0%

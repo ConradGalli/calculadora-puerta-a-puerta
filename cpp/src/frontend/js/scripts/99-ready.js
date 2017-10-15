@@ -1,3 +1,5 @@
+var viewportHeight = $(window).height();
+
 $(document).ready(function() {
 
 	f_social__share('landing'); // landing, mobile (especificar cual versión estamos haciendo)
@@ -8,6 +10,8 @@ $(document).ready(function() {
 	/* Frontend */
 	f_goToHash();
 
+	console.log('VH Original: '+viewportHeight);
+
 	$('#price_original').blur(function() {
 		if ($.trim($('#price_original').val()) === '') {
 			$('.c-biginput').removeClass('is-active');
@@ -16,6 +20,10 @@ $(document).ready(function() {
 			$('.c-biginput__loading').removeClass('is-enabled');
 		}
 	});
+
+	setTimeout(function() {
+		$('.c-result-nav').addClass('is-visible');
+	},200);
 
 	/* GA Bounce */
 	f_ga__bounce_time('short', '(10s) Tu usuario ha estado aquí por al menos 10 seg.', 10000);
