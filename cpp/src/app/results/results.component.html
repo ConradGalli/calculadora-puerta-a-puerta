@@ -3,10 +3,10 @@
 		<a href="calculate" class="c-result-nav__back" for="price_original" onclick="f_animateBiginputToTop();"><i class="material-icons md-36">arrow_back</i></a>
 		<div class="c-result-nav__wrapper">
 			<div class="c-result-nav__old-value">Valor inicial US$ <span>143.58</span></div>
-			<div class="c-result-nav__new-value">AR$ <span>13455.44</span></div>
+			<div class="c-result-nav__new-value">AR$ <span id="price_final">13455.44</span></div>
 		</div>
 	</div>
-	<div class="c-result-nav__dollar">Dolar: AR$<span id="dollarConverted">17.54</span></div>
+	<div class="c-result-nav__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
 	<div class="c-result-nav__loading">
 		<span class="c-result-nav__progress c-result-nav__progress_a"></span>
 		<span class="c-result-nav__progress c-result-nav__progress_b"></span>
@@ -20,7 +20,7 @@
 			<i class="material-icons">import_contacts</i>
 			<span class="c-cards__title">Esta compra es un libro</span>
 			<div class="c-cards__action" onclick="f_toggleActionCards($(this));">
-				<i class="material-icons">check_box_outline_blank</i>
+				<i class="material-icons" id="book">check_box_outline_blank</i>
 			</div>
 		</div>
 		<div class="c-cards__body">
@@ -30,7 +30,7 @@
 
 	<div class="c-cards">
 		<div class="c-cards__header">
-			<i class="material-icons">local_activity</i>
+			<i class="material-icons" id="franchise">local_activity</i>
 			<span class="c-cards__title">Es mi primer compra del año</span>
 			<div class="c-cards__action" onclick="f_toggleActionCards($(this));">
 				<i class="material-icons">check_box_outline_blank</i>
@@ -51,6 +51,8 @@
 		</div>
 		<div class="c-cards__body">
 			El costo del envío forma parte del total de la compra. Es importante para calcular el impuesto del VEP.
+			<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00">
+
 		</div>
 	</div>
 
@@ -62,19 +64,51 @@
 		<div class="c-cards__body">
 			<div class="c-cards__row">
 				<div class="c-cards__cell c-cards__cell_label">Valor del dólar</div>
-				<div class="c-cards__cell c-cards__cell_result">AR$ 28.7877</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-dollar">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Valor del dólar en la provincia de Mendoza</div>
-				<div class="c-cards__cell c-cards__cell_result">AR$ 28.7877</div>
+				<div class="c-cards__cell c-cards__cell_label">Precio del producto</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-product">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">kulo</div>
-				<div class="c-cards__cell c-cards__cell_result">AR$ 28.7877</div>
+				<div class="c-cards__cell c-cards__cell_label">Precio del envío</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-shipping">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Valor del dólar costo total de imp</div>
-				<div class="c-cards__cell c-cards__cell_result">AR$ 28.7877</div>
+				<div class="c-cards__cell c-cards__cell_label">Producto + envío</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-fullprice">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Franquicia anual de importación</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-franchise">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Precio con beneficio de franquicia aplicado</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-franchisedprice">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">VEP (impuesto del 50% aplicado sobre el valor en US$ del producto + envío)</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-tax">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Subtotal en US$</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-priceusd">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Subtotal en AR$</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-pricears">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Servicios del Correo Argentino</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-courrier">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Inflación de la compra en relación al precio + envío original</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-inflation">0%</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Total en AR$</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-totalars">XX$ 00.00</div>
 			</div>
 		</div>
 	</div>

@@ -5,9 +5,9 @@
 	<div class="c-biginput__box">
 		<label class="c-biginput__currency" for="price_original" onclick="f_animateBiginputToTop();">US$</label>
 		<input type="number" name="productvalue" value="" placeholder="0.00" id="price_original" class="c-biginput__input" onkeyup="f_setBiginputValidation($(this));" onclick="f_animateBiginputToTop();">
-		<a href="results" class="c-biginput__ok"><i class="material-icons">check</i></a>
+		<a href="results" class="c-biginput__ok" onclick="f_calculate__ars(false);"><i class="material-icons">check</i></a>
 	</div>
-	<div class="c-biginput__dollar">Dolar: AR$<span id="dollarConverted">17.54</span></div>
+	<div class="c-biginput__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
 	<div class="c-biginput__loading">
 		<span class="c-biginput__progress c-biginput__progress_a"></span>
 		<span class="c-biginput__progress c-biginput__progress_b"></span>

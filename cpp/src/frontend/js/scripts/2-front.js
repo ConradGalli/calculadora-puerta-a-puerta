@@ -1,8 +1,3 @@
-// $('.c-navigation__item').on('click', function(event) {
-// 	$('.c-navigation__item').removeClass('is-active');
-// 	$(this).addClass('is-active');
-// });
-
 function f_detectPageAndApplyToNav(page) {
 	$('.c-navigation__item').removeClass('is-active');
 	$('.c-navigation__item_'+page+' .c-navigation__label').slideDown(300);
