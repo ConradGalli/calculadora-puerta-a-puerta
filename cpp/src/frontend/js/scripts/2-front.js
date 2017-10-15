@@ -39,3 +39,13 @@ function f_setNavVisibility() {
 		}
 	}
 }
+
+function f_toggleActionCards(el) {
+	if (!el.find('.material-icons').hasClass('is-checked')) {
+		el.find('.material-icons').text('check_box');
+		el.find('.material-icons').addClass('is-checked');
+	} else {
+		el.find('.material-icons').text('check_box_outline_blank');
+		el.find('.material-icons').removeClass('is-checked');
+	}
+}
