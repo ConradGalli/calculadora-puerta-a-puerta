@@ -23,6 +23,7 @@ $(document).ready(function() {
 
 	setTimeout(function() {
 		$('.c-result-nav').addClass('is-visible');
+		$('.l-results__body').addClass('is-visible');
 	},200);
 
 	/* GA Bounce */

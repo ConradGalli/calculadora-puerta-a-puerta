@@ -1,0 +1,48 @@
+.c-cards
+	@extend %bbx
+	width: 100%
+	padding: 20px
+	margin-bottom: 15px
+	background-color: #fff
+	box-shadow: 0 3px 10px darken($br-gray-light, 10%)
+
+	&__header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-direction: row
+		margin-bottom: 15px
+		color: $br-extra
+		font-weight: 700
+
+	&__title
+		width: 100%
+		padding-left: 10px
+
+	&__action
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		width: 40px
+		color: $br-gray-dark
+
+	&__body
+		color: $br-gray-dark
+
+	&__row
+		@extend %bbx
+		padding-top: 10px
+		padding-bottom: 10px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-direction: row
+		border-top: 1px solid $br-gray-light
+
+	&__cell
+		&_label
+			width: 60%
+		&_result
+			width: 35%
+			color: $br-extra
+			text-align: right

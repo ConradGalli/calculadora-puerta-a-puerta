@@ -1,8 +1,6 @@
 .c-result-nav
 	@extend %bbx
 	display: block
-	position: fixed
-	top: 0
 	width: 100%
 	transition: transform 0.2s ease, padding 0.2s ease
 
@@ -21,8 +19,10 @@
 			transform: scaleY(1)
 			opacity: 1
 
-
 	&__box
+		position: fixed
+		z-index: 10
+		top: 0
 		display: flex
 		justify-content: space-between
 		align-items: center
@@ -32,7 +32,7 @@
 		@extend %bbx
 		padding: 30px
 		background-color: #fff
-		border-radius: 4px
+		border-radius: 0
 		box-shadow: 0 3px 10px darken($br-gray-light, 10%)
 		transition: height 0.2s ease, padding 0.2s ease
 
@@ -67,6 +67,8 @@
 		font-size: 2.1em
 
 	&__dollar
+		position: relative
+		top: $hero-height
 		padding-top: 20px
 		padding-bottom: 20px
 		color: $br-gray-dark
