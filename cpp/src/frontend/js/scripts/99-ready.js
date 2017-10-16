@@ -3,11 +3,8 @@ var viewportHeight = $(window).height();
 $(document).ready(function() {
 
 	$('#dollarConverted').text(dollarConverted);
-	
-	f_social__share('landing'); // landing, mobile (especificar cual versión estamos haciendo)
 
-	/* Load products */
-	f_on__events();
+	f_social__share('landing'); // landing, mobile (especificar cual versión estamos haciendo)
 
 	/* Frontend */
 	f_goToHash();

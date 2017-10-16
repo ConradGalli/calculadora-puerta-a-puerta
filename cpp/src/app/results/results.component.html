@@ -2,8 +2,8 @@
 	<div class="c-result-nav__box">
 		<a href="calculate" class="c-result-nav__back" for="price_original" onclick="f_animateBiginputToTop();"><i class="material-icons md-36">arrow_back</i></a>
 		<div class="c-result-nav__wrapper">
-			<div class="c-result-nav__old-value">Valor inicial US$ <span>143.58</span></div>
-			<div class="c-result-nav__new-value">AR$ <span id="price_final">13455.44</span></div>
+			<div class="c-result-nav__old-value">Valor inicial US$ <span id="price_original">20</span></div>
+			<div class="c-result-nav__new-value">AR$ <span id="price_final">0.00</span></div>
 		</div>
 	</div>
 	<div class="c-result-nav__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
@@ -19,8 +19,8 @@
 		<div class="c-cards__header">
 			<i class="material-icons">import_contacts</i>
 			<span class="c-cards__title">Esta compra es un libro</span>
-			<div class="c-cards__action" onclick="f_toggleActionCards($(this));">
-				<i class="material-icons" id="book">check_box_outline_blank</i>
+			<div class="c-cards__action">
+				<i class="material-icons" id="book" onclick="f_toggleActionCards($(this));f_toggleBookPurchase();">check_box_outline_blank</i>
 			</div>
 		</div>
 		<div class="c-cards__body">
@@ -30,10 +30,10 @@
 
 	<div class="c-cards">
 		<div class="c-cards__header">
-			<i class="material-icons" id="franchise">local_activity</i>
+			<i class="material-icons">local_activity</i>
 			<span class="c-cards__title">Es mi primer compra del año</span>
-			<div class="c-cards__action" onclick="f_toggleActionCards($(this));">
-				<i class="material-icons">check_box_outline_blank</i>
+			<div class="c-cards__action">
+				<i class="material-icons" id="franchise" onclick="f_toggleActionCards($(this));f_toggleAnualFranchise();">check_box_outline_blank</i>
 			</div>
 		</div>
 		<div class="c-cards__body">
@@ -45,18 +45,18 @@
 		<div class="c-cards__header">
 			<i class="material-icons">airplanemode_active</i>
 			<span class="c-cards__title">El envío está incluido</span>
-			<div class="c-cards__action" onclick="f_toggleActionCards($(this));">
-				<i class="material-icons">check_box_outline_blank</i>
+			<div class="c-cards__action">
+				<i class="material-icons l-results__shipping-status" onclick="f_toggleActionCards($(this));f_toggleShipping();">check_box_outline_blank</i>
 			</div>
 		</div>
 		<div class="c-cards__body">
 			El costo del envío forma parte del total de la compra. Es importante para calcular el impuesto del VEP.
 			<div class="l-results__shipping">
-				<label for="shipping_price">Ingresa el valor del envío:</label>
+				<label for="shipping_price">Ingresa el costo del envío:</label>
 				<div class="l-results__shipping-input">
 					<label for="shipping_price">US$</label>
-					<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00">
-					<span class="l-results__shipping-ok" onclick="f_calculate__ars(false);"><i class="material-icons">check</i></span>
+					<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00" onkeyup="f_setInputShippingValidation($(this));">
+					<span class="l-results__shipping-ok" onclick="f_calculate__ars(false);"><i class="material-icons">refresh</i></span>
 				</div>
 			</div>
 		</div>
@@ -121,4 +121,4 @@
 
 	<app-social></app-social>
 </article>
-<!-- <app-navigation></app-navigation> -->
+<!-- NOTE: On load trick --> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQIW2NgYAAAAAMAAdzsfUgAAAAASUVORK5CYII=" class="h-hidden" onload="f_calculate__ars(false);">

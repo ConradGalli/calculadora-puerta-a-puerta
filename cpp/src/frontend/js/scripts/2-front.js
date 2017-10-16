@@ -12,6 +12,14 @@ function f_setBiginputValidation(el) {
 	}
 }
 
+function f_setInputShippingValidation(el) {
+	if ($.trim(el.val()) !== '') {
+		$('.l-results__shipping-ok').addClass('is-enabled');
+	} else {
+		$('.l-results__shipping-ok').removeClass('is-enabled');
+	}
+}
+
 function f_animateBiginputToTop() {
 	if (!$('.c-biginput').hasClass('is-active')) {
 		$('.c-biginput').addClass('is-active');
@@ -36,11 +44,11 @@ function f_setNavVisibility() {
 }
 
 function f_toggleActionCards(el) {
-	if (!el.find('.material-icons').hasClass('is-checked')) {
-		el.find('.material-icons').text('check_box');
-		el.find('.material-icons').addClass('is-checked');
+	if (!el.hasClass('is-checked')) {
+		el.text('check_box');
+		el.addClass('is-checked');
 	} else {
-		el.find('.material-icons').text('check_box_outline_blank');
-		el.find('.material-icons').removeClass('is-checked');
+		el.text('check_box_outline_blank');
+		el.removeClass('is-checked');
 	}
 }

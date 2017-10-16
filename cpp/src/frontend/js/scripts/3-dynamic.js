@@ -45,24 +45,3 @@ function f_social__share(version) {
 	$('.c-social__button_whatsapp')
 		.attr('href', 'whatsapp://send?text='+title+'%20' + myUrl + '');
 }
-
-
-function f_on__events() {
-	$('.c-product__var').on('click', function() {
-		f_variants__select($(this));
-	});
-
-	$('.c-product__select').on('change', function() {
-		// cuando el select de talle o cantidad cambia de valor aplico el estilo segun su estado
-		f_selects__status($(this));
-		// cuando hago click selects de talle y cantidad y valido el botón de compra de acuerdo a su valor
-		f_selects__validation($(this));
-	});
-
-	$('.c-product__select').each(function(index, el) {
-		// recorro los selects de talle y cantidad y aplico el estilo segun su estado
-		f_selects__status($(this));
-		// recorro los selects de talle y cantidad y valido el botón de compra de acuerdo a su valor
-		f_selects__validation($(this));
-	});
-}

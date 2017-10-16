@@ -1,7 +1,7 @@
-var dollarConverted = 16.04;
+var dollarConverted = 17.3245;
 
 
-// Source: https://openexchangerates.org/
+// // Source: https://openexchangerates.org/
 // $.get('https://openexchangerates.org/api/latest.json', {app_id: '8f20c082fbbd475a84792e488cd902b2', base: 'USD'}, function(data) {
 // 		console.log("1 USD " + data.rates.ARS + " ARS");
 // 		dollarConverted = data.rates.ARS;
@@ -14,11 +14,11 @@ function f_calculate__ars(boolean) {
 	var
 		book = boolean || false,
 		tax = 50, // porcentaje
-		dollar = dollarConverted, // hacer dinámico
+		dollar = dollarConverted, // obtenido de openexchangerates.org
 
-		product = parseFloat($('#price_original').val()) || 0, // precio del producto
+		product = parseFloat($('#price_original').text()) || 0, // precio del producto
 		shipping = parseFloat($('#shipping_price').val()) || 0, // costo del envío
-		franchise = ($('#franchise').hasClass('is-selected')) ? 25 : 0, // franquicia anual que otorga la AFIP
+		franchise = ($('#franchise').hasClass('is-checked')) ? 25 : 0, // franquicia anual que otorga la AFIP
 		courier = (book === true || product === 0) ? 0 : 120, // envío por Correo Argentino
 
 		price = product + shipping,
@@ -35,7 +35,6 @@ function f_calculate__ars(boolean) {
 	console.log('\n\nCalculando...');
 	(product > 200) ? console.log('\nTené en cuenta que el precio del producto no debe superar los US$ 200\n\n') : console.log('');
 	(product < 4) ? console.log('\nSi... es increible pagar tanto por un producto de solo US$ 3\n\n') : console.log('');
-	(product === 0) ? f_layout__reset() : f_layout__results();
 
 	console.log('Precio del producto en US$: '+product.toFixed(2));
 	$('#log-product').html(product.toFixed(2));
@@ -77,110 +76,44 @@ function f_calculate__ars(boolean) {
 
 }
 
-function f_book__toggle() {
-	$('#book').toggleClass('is-selected');
-	if ($('#book').hasClass('is-selected')) {
-		$('#franchise').slideUp('fast');
-		$('#book').find('.material-icons').html('check_box');
+function f_toggleBookPurchase() {
+	if ($('#book').hasClass('is-checked')) {
+		$('.l-results__shipping').addClass('is-disabled').slideUp(500);
 		f_calculate__ars(true);
 	} else {
-		$('#franchise').slideDown('fast');
-		$('#book').find('.material-icons').html('check_box_outline_blank');
-		f_calculate__ars();
+		$('.l-results__shipping').slideDown(500).removeClass('is-disabled');
+		f_calculate__ars(false);
 	}
 }
 
-function f_book_condition() {
-	if ($('#book').hasClass('is-selected')) {
+function f_setBookPurchaseCondition() {
+	if ($('#book').hasClass('is-checked')) {
 		f_calculate__ars(true);
 	} else {
-		f_calculate__ars();
+		f_calculate__ars(false);
 	}
 }
 
-function f_franchise__toggle() {
-	$('#franchise').toggleClass('is-selected');
-
-	if ($('#franchise').hasClass('is-selected')) {
-		$('#franchise').find('.material-icons').html('check_box');
-	} else {
-		$('#franchise').find('.material-icons').html('check_box_outline_blank');
-	}
-
-	f_book_condition();
+function f_toggleAnualFranchise() {
+	f_setBookPurchaseCondition();
 }
 
-function f_shipping__toggle() {
-	$('#shipping_price').toggleClass('is-selected');
-
-	if ($('#shipping_price').hasClass('is-selected')) {
-		$('.shipping_price-trigger').find('.material-icons').html('check_box');
-		$('.shipping_price-container').slideUp('fast');
+function f_toggleShipping() {
+	if ($('.l-results__shipping-status').hasClass('is-checked')) {
+		$('.l-results__shipping').addClass('is-disabled').slideUp(500);
 		$('#shipping_price').val('');
-		f_book_condition();
+		f_setBookPurchaseCondition();
 	} else {
-		$('.shipping_price-trigger').find('.material-icons').html('check_box_outline_blank');
-		$('.shipping_price-container').slideDown('fast');
+		$('.l-results__shipping').slideDown(500).removeClass('is-disabled');
 	}
 }
 
-function f_layout__results() {
-	$('.c-step_second, body').addClass('is-visible');
-	$('.c-step_first').removeClass('is-visible');
-	$('html, body').animate({scrollTop: $('.c-step_second').offset().top}, 500);
-}
 
-function f_enable__ok() {
-	var product = parseFloat($('#price_original').val());
-	if (product > 0) {
-		$('.c-product-price__ok').addClass('is-enabled');
-	} else {
-		$('.c-product-price__ok').removeClass('is-enabled');
-	}
-}
+
+
+// PARA REVISAR ===========================
 
 function f_reset() {
-	$('#price_original').val('');
-	setTimeout(function() {
-		$('#price_original').focus();
-	},500)
-}
-
-function f_layout__reset() {
-	$('.c-step_first').addClass('is-visible');
-	$('.c-step_second').removeClass('is-visible');
-}
-
-function f_keypress__enter(e) {
-	if(e.which == 13) {
-			console.log('Enter...');
-			f_book_condition();
-	}
-}
-
-function f_social__share() {
-	// No usar "|" (pipe) o caracteres especiales en el <title> del html
-	var	myUrl = window.location.href,
-			title = $(document).find("title").text(),
-			facebook = 'https://www.facebook.com/sharer/sharer.php?u='+myUrl+'',
-			twitter = 'https://twitter.com/intent/tweet?text='+title+'%20'+myUrl+'';
-
-	// Compartir en Facebook
-	$('.c-navigation__link_facebook').on('click', function(event) {
-		console.log('Url a compartir: '+myUrl);
-		event.preventDefault();
-		window.open(facebook, 'Compartir en Facebook', 'width=500,height=500,resizable=1');
-	});
-
-	// Compartir en Twitter
-	$('.c-navigation__link_twitter').on('click', function(event) {
-		console.log('Url a compartir: '+myUrl);
-		event.preventDefault();
-		window.open(twitter, 'Compartir en Twitter', 'width=500,height=500,resizable=1');
-	});
-
-	// Compartir en Whatsapp
-	// Este atributo abre la app de whatsapp si la tenemos instalada (lo que es muy probable)
-	$('.c-navigation__link_whatsapp')
-		.attr('href', 'whatsapp://send?text='+title+'%20' + myUrl + '');
+	$('#price_original').text('');
+	$('#shipping_price').val('');
 }

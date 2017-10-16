@@ -30,6 +30,11 @@
 		padding-top: 15px
 		margin-top: 15px
 		border-top: 1px solid $br-gray-light
+		opacity: 1
+		transition: opacity 0.4s ease 0.1s
+
+		&.is-disabled
+			opacity: 0
 
 		> label
 			padding-bottom: 15px
@@ -73,5 +78,5 @@
 
 			&.is-enabled
 				background-color: $br-main
-				animation: animateBiginputToTop 1s infinite ease
+				// animation: animateBiginputToTop 1s infinite ease
 				pointer-events: auto
