@@ -6,6 +6,15 @@
 	background-color: #fff
 	box-shadow: 0 3px 10px darken($br-gray-light, 10%)
 
+	a
+		color: $br-main
+		text-decoration: underline
+
+		&:hover
+			color: cyan
+		&visited
+			color: yellow
+
 	&__header
 		display: flex
 		align-items: center
@@ -17,7 +26,6 @@
 
 	&__title
 		width: 100%
-		padding-left: 10px
 
 	&__action
 		display: flex
