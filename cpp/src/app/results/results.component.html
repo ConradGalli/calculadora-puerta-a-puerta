@@ -2,8 +2,8 @@
 	<div class="c-result-nav__box">
 		<a href="calculate" class="c-result-nav__back" for="price_original" onclick="f_animateBiginputToTop();"><i class="material-icons md-36">arrow_back</i></a>
 		<div class="c-result-nav__wrapper">
-			<div class="c-result-nav__old-value">Valor inicial US$ <span id="price_original">20</span></div>
-			<div class="c-result-nav__new-value">AR$ <span id="price_final">0.00</span></div>
+			<div class="c-result-nav__old-value">Precio original US$ <span id="price_original">20</span></div>
+			<div class="c-result-nav__new-value" id="price_final">0.00</div>
 		</div>
 	</div>
 	<div class="c-result-nav__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
@@ -73,8 +73,12 @@
 				<div class="c-cards__cell c-cards__cell_result" id="log-dollar">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Precio del producto</div>
+				<div class="c-cards__cell c-cards__cell_label">Precio original del producto en USD</div>
 				<div class="c-cards__cell c-cards__cell_result" id="log-product">XX$ 00.00</div>
+			</div>
+			<div class="c-cards__row">
+				<div class="c-cards__cell c-cards__cell_label">Precio del producto convertido a ARS</div>
+				<div class="c-cards__cell c-cards__cell_result" id="log-product-ars">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
 				<div class="c-cards__cell c-cards__cell_label">Precio del envío</div>
@@ -97,11 +101,11 @@
 				<div class="c-cards__cell c-cards__cell_result" id="log-tax">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Subtotal en US$</div>
+				<div class="c-cards__cell c-cards__cell_label">Subtotal en USD</div>
 				<div class="c-cards__cell c-cards__cell_result" id="log-priceusd">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Subtotal en AR$</div>
+				<div class="c-cards__cell c-cards__cell_label">Subtotal en ARS</div>
 				<div class="c-cards__cell c-cards__cell_result" id="log-pricears">XX$ 00.00</div>
 			</div>
 			<div class="c-cards__row">
@@ -113,7 +117,7 @@
 				<div class="c-cards__cell c-cards__cell_result" id="log-inflation">0%</div>
 			</div>
 			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Total en AR$</div>
+				<div class="c-cards__cell c-cards__cell_label">Total en ARS</div>
 				<div class="c-cards__cell c-cards__cell_result" id="log-totalars">XX$ 00.00</div>
 			</div>
 		</div>
