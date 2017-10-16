@@ -21,9 +21,57 @@
 		.c-cards__title
 			padding-left: 10px
 
-	&__explanation
-		max-width: 80%
-		color: $br-gray-dark
-		font-size: 1.1em
-		text-align: center
-		margin-bottom: 30px
+	&__shipping
+		display: flex
+		justify-content: flex-start
+		align-items: flex-start
+		flex-direction: column
+		@extend %bbx
+		padding-top: 15px
+		margin-top: 15px
+		border-top: 1px solid $br-gray-light
+
+		> label
+			padding-bottom: 15px
+
+		&-input
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			flex-direction: row
+
+			label
+				margin-right: 20px
+
+			input
+				@extend %bbx
+				width: 100px
+				padding: 10px
+				margin-right: 20px
+				border: 1px solid $br-gray-dark
+				border-radius: 3px
+				color: $br-extra
+				text-align: right
+				outline: none
+
+				&::placeholder
+					color: $br-gray-dark
+
+
+		&-ok
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 40px
+			height: 40px
+			background-color: $br-gray-dark
+			border-radius: 25px
+			color: #fff
+			text-decoration: none
+			transition: background-color 0.3s ease, transform 0.3s
+			pointer-events: none
+
+			&.is-enabled
+				background-color: $br-main
+				animation: animateBiginputToTop 1s infinite ease
+				pointer-events: auto

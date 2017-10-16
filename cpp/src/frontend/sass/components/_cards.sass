@@ -7,13 +7,14 @@
 	box-shadow: 0 3px 10px darken($br-gray-light, 10%)
 
 	a
-		color: $br-main
+		color: lighten($br-extra, 40%)
+		font-style: italic
 		text-decoration: underline
 
 		&:hover
-			color: cyan
+			color: lighten($br-extra, 20%)
 		&visited
-			color: yellow
+			color: darken($br-gray-dark, 20%)
 
 	&__header
 		display: flex
@@ -51,6 +52,7 @@
 		align-items: center
 		flex-direction: row
 		border-top: 1px solid $br-gray-light
+
 
 	&__cell
 

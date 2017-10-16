@@ -51,8 +51,14 @@
 		</div>
 		<div class="c-cards__body">
 			El costo del envío forma parte del total de la compra. Es importante para calcular el impuesto del VEP.
-			<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00">
-
+			<div class="l-results__shipping">
+				<label for="shipping_price">Ingresa el valor del envío:</label>
+				<div class="l-results__shipping-input">
+					<label for="shipping_price">US$</label>
+					<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00">
+					<span class="l-results__shipping-ok" onclick="f_calculate__ars(false);"><i class="material-icons">check</i></span>
+				</div>
+			</div>
 		</div>
 	</div>
 
