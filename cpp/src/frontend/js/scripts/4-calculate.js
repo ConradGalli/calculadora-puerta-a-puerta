@@ -1,4 +1,5 @@
 var dollarConverted = 17.3245;
+var userInputPrice = 0;
 
 // // Source: https://openexchangerates.org/
 // $.get('https://openexchangerates.org/api/latest.json', {app_id: '8f20c082fbbd475a84792e488cd902b2', base: 'USD'}, function(data) {
@@ -9,6 +10,8 @@ var dollarConverted = 17.3245;
 // });
 
 function f_calculate__ars(boolean) {
+
+	$('#price_original').text(userInputPrice);
 
 	var
 		book = boolean || false,
@@ -110,6 +113,10 @@ function f_toggleShipping() {
 	}
 }
 
+function f_saveUserInputPrice(el) {
+	userInputPrice = el.val();
+}
+
 
 
 // PARA REVISAR ===========================
@@ -117,4 +124,5 @@ function f_toggleShipping() {
 function f_reset() {
 	$('#price_original').text('');
 	$('#shipping_price').val('');
+	userInputPrice = 0;
 }

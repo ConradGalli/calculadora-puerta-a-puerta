@@ -1,6 +1,6 @@
 <div class="c-result-nav">
 	<div class="c-result-nav__box">
-		<a href="calculate" class="c-result-nav__back" for="price_original" onclick="f_animateBiginputToTop();"><i class="material-icons md-36">arrow_back</i></a>
+		<a routerLink="/calculate" class="c-result-nav__back" for="price_original" onclick="f_animateBiginputToTop();"><i class="material-icons md-36">arrow_back</i></a>
 		<div class="c-result-nav__wrapper">
 			<div class="c-result-nav__old-value">Precio original US$ <span id="price_original"></span></div>
 			<div class="c-result-nav__new-value" id="price_final" onchange="console.log('Cambió el texto re lokokfjsdakfjkslafjlksdajf;jdsafjafjd')">0.00</div>
@@ -125,4 +125,4 @@
 
 	<app-social></app-social>
 </article>
-<!-- NOTE: On load trick --> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQIW2NgYAAAAAMAAdzsfUgAAAAASUVORK5CYII=" class="h-hidden" onload="f_calculate__ars(false);">
+<!-- NOTE: On load trick --> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQIW2NgYAAAAAMAAdzsfUgAAAAASUVORK5CYII=" class="h-hidden" onload="f_setResultsVisivility();f_calculate__ars(false);">

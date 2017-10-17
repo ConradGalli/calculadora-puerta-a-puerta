@@ -2,6 +2,7 @@ var viewportHeight = $(window).height();
 
 $(document).ready(function() {
 
+
 	$('#dollarConverted').text(dollarConverted.toFixed(2));
 
 	f_social__share('landing'); // landing, mobile (especificar cual versión estamos haciendo)
@@ -19,11 +20,6 @@ $(document).ready(function() {
 			$('.c-biginput__loading').removeClass('is-enabled');
 		}
 	});
-
-	setTimeout(function() {
-		$('.c-result-nav').addClass('is-visible');
-		$('.l-results__body').addClass('is-visible');
-	},200);
 
 	/* GA Bounce */
 	f_ga__bounce_time('short', '(10s) Tu usuario ha estado aquí por al menos 10 seg.', 10000);

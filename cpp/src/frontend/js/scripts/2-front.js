@@ -1,11 +1,11 @@
 function f_detectPageAndApplyToNav(page) {
 	$('.c-navigation__item').removeClass('is-active');
-	$('.c-navigation__item_'+page+' .c-navigation__label').slideDown(300);
+	$('.c-navigation__item_'+page+' .c-navigation__label').slideDown(200);
 	$('.c-navigation__item_'+page+'').addClass('is-active');
 }
 
 function f_setBiginputValidation(el) {
-	if ($.trim(el.val()) !== '' && el.val() > 0 ) {
+	if ($.trim(el.val()) !== '' ) {
 		$('.c-biginput__ok').addClass('is-enabled');
 	} else {
 		$('.c-biginput__ok').removeClass('is-enabled');
@@ -51,4 +51,11 @@ function f_toggleActionCards(el) {
 		el.text('check_box_outline_blank');
 		el.removeClass('is-checked');
 	}
+}
+
+function f_setResultsVisivility() {
+	// setTimeout(function() {
+		$('.c-result-nav').addClass('is-visible');
+		$('.l-results__body').addClass('is-visible');
+	// },200);
 }
