@@ -37,8 +37,8 @@ function f_setNavVisibility() {
 		$('.c-navigation').hide().addClass('has-keyboard');
 	} else {
 		$('.c-navigation').show().removeClass('has-keyboard');
-		if ($.trim($('#price_original').val()) === '') {
-			$('#price_original').blur();
+		if ($.trim($('#price_input').val()) === '') {
+			$('#price_input').blur();
 		}
 	}
 }

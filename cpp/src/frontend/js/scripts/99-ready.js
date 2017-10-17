@@ -11,8 +11,8 @@ $(document).ready(function() {
 
 	console.log('VH Original: '+viewportHeight);
 
-	$('#price_original').blur(function() {
-		if ($.trim($('#price_original').val()) === '') {
+	$('#price_input').blur(function() {
+		if ($.trim($('#price_input').val()) === '') {
 			$('.c-biginput').removeClass('is-active');
 			$('.c-logo_home').removeClass('is-disabled');
 			$('.l-home__body').fadeIn();
