@@ -1,18 +1,11 @@
 var viewportHeight = $(window).height();
 
 $(document).ready(function() {
-	if ($(window).width() > 550 ) {
-		// alert('Por el momento esta app solo se ve bien en smartphones, no está disponible para escritorio. \n\n Disculpa las molestias. Al aceptar, serás redirigido al repositorio en GitHub.');
-		// $('html, body').hide();
-	}
-
-
-	$('body').css('min-height', viewportHeight);
-
+	// $('body').css('min-height', viewportHeight);
 
 	$('#dollarConverted').text(dollarConverted.toFixed(2));
 
-	f_social__share('landing'); // landing, mobile (especificar cual versión estamos haciendo)
+	f_social__share(); // landing, mobile (especificar cual versión estamos haciendo)
 
 	/* Frontend */
 	f_goToHash();
