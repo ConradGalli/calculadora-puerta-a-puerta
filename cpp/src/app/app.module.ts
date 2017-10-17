@@ -9,6 +9,7 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 import { AboutComponent } from './about/about.component';
 import { SocialComponent } from './social/social.component';
 import { ResultsComponent } from './results/results.component';
+import { PriceComponent } from './price/price.component';
 
 const appRoutes: Routes = [
 	{ path: '', component: CalculateComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
 		TutorialComponent,
 		AboutComponent,
 		SocialComponent,
-		ResultsComponent
+		ResultsComponent,
+		PriceComponent
 	],
 	imports: [
 		BrowserModule,

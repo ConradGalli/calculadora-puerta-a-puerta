@@ -5,7 +5,7 @@ function f_detectPageAndApplyToNav(page) {
 }
 
 function f_setBiginputValidation(el) {
-	if ($.trim(el.val()) !== '') {
+	if ($.trim(el.val()) !== '' && el.val() > 0 ) {
 		$('.c-biginput__ok').addClass('is-enabled');
 	} else {
 		$('.c-biginput__ok').removeClass('is-enabled');

@@ -1,6 +1,5 @@
 var dollarConverted = 17.3245;
 
-
 // // Source: https://openexchangerates.org/
 // $.get('https://openexchangerates.org/api/latest.json', {app_id: '8f20c082fbbd475a84792e488cd902b2', base: 'USD'}, function(data) {
 // 		console.log("1 USD " + data.rates.ARS + " ARS");
@@ -110,7 +109,6 @@ function f_toggleShipping() {
 		$('.l-results__shipping').slideDown(300).removeClass('is-disabled');
 	}
 }
-
 
 
 
