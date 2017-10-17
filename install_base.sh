@@ -1,1 +1,0 @@
-npm install gulp gulp-concat gulp-jshint gulp-notify gulp-plumber gulp-sass node-sass gulp-css gulp-sourcemaps gulp-strip-debug gulp-uglify gulp-util browser-sync jshint gulp-zip gulp-image-optimization gulp-rev-mtime --save-dev
