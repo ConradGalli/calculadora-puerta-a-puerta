@@ -41,8 +41,8 @@ function f_calculate__ars(boolean) {
 	console.log('Precio del producto en US$: '+product.toFixed(2));
 	$('#log-product').html('US$ ' + product.toFixed(2));
 
-	console.log('Precio del producto en AR$: '+product.toFixed(2));
-	$('#log-product-ars').html('AR$ ' + (product.toFixed(2)*dollarConverted));
+	console.log('Precio del producto en AR$: '+product*dollarConverted.toFixed(2));
+	$('#log-product-ars').html('AR$ ' + (product.toFixed(2)*dollarConverted.toFixed(2)));
 
 	console.log('Precio del envío en US$: '+shipping.toFixed(2));
 	$('#log-shipping').html('US$ ' + shipping.toFixed(2));
@@ -84,9 +84,13 @@ function f_calculate__ars(boolean) {
 function f_toggleBookPurchase() {
 	if ($('#book').hasClass('is-checked')) {
 		$('.l-results__shipping').addClass('is-disabled').slideUp(300);
+		$('.c-cards_shipping').slideUp(200);
+		$('#shipping_price').val('');
+		$('.l-results__shipping-status').text('check_box_outline_blank').removeClass('is-checked');
 		f_calculate__ars(true);
 	} else {
 		$('.l-results__shipping').slideDown(300).removeClass('is-disabled');
+		$('.c-cards_shipping').slideDown(200);
 		f_calculate__ars(false);
 	}
 }
@@ -116,10 +120,6 @@ function f_toggleShipping() {
 function f_saveUserInputPrice(el) {
 	userInputPrice = el.val();
 }
-
-
-
-// PARA REVISAR ===========================
 
 function f_reset() {
 	$('#price_original').text('');
