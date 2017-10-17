@@ -1,26 +1,30 @@
-<div class="c-logo c-logo_home">
-	<img src="./assets/img/logos/logo__free_color.svg" alt="Logo">
-</div>
-<div class="c-biginput">
-	<div class="c-biginput__box">
-		<label class="c-biginput__currency" for="price_original" onclick="f_animateBiginputToTop();">US$</label>
-		<input type="number" name="productvalue" value="" placeholder="0.00" id="price_input" class="c-biginput__input" onkeyup="f_setBiginputValidation($(this));f_saveUserInputPrice($(this))" onclick="f_animateBiginputToTop();">
-		<a routerLink="/results" class="c-biginput__ok" onclick="f_calculate__ars(false);"><i class="material-icons">check</i></a>
+<div class="wrapper wrapper_xs">
+	<div class="c-logo c-logo_home">
+		<img src="./assets/img/logos/logo__free_color.svg" alt="Logo">
 	</div>
-	<div class="c-biginput__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
-	<div class="c-biginput__loading">
-		<span class="c-biginput__progress c-biginput__progress_a"></span>
-		<span class="c-biginput__progress c-biginput__progress_b"></span>
+	<div class="c-biginput">
+		<div class="c-biginput__box">
+			<label class="c-biginput__currency" for="price_original" onclick="f_animateBiginputToTop();">US$</label>
+			<input type="number" name="productvalue" value="" placeholder="0.00" id="price_input" class="c-biginput__input" onkeyup="f_setBiginputValidation($(this));f_saveUserInputPrice($(this))" onchange="f_setBiginputValidation($(this));f_saveUserInputPrice($(this))" onclick="f_animateBiginputToTop();">
+			<a routerLink="/results" class="c-biginput__ok" onclick="f_calculate__ars(false);"><i class="material-icons">check</i></a>
+		</div>
+		<div class="c-biginput__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
+		<div class="c-biginput__loading" onclick="f_setUserInputBlur();">
+			<span class="c-biginput__progress c-biginput__progress_a"></span>
+			<span class="c-biginput__progress c-biginput__progress_b"></span>
+		</div>
 	</div>
 </div>
 
-<article class="l-home__body">
-	<p class="l-home__explanation">
-		Ingresá el monto del producto que vas a importar y la Calculadora Puerta a Puerta te va a decir cuanto vas a gastar en pesos argentinos.
-	</p>
-	<button class="cta cta_sm cta_outline" data-modal="description" onclick="f_modal__trigger($(this),true);"><i class="material-icons">flash_on</i> Crear un acceso directo</button>
-	<app-social></app-social>
-</article>
+<div class="wrapper wrapper_xs">
+	<article class="l-home__body">
+		<p class="l-home__explanation">
+			Ingresá el monto del producto que vas a importar y la Calculadora Puerta a Puerta te va a decir cuanto vas a gastar en pesos argentinos.
+		</p>
+		<button class="cta cta_sm cta_outline" data-modal="description" onclick="f_modal__trigger($(this),true);"><i class="material-icons">flash_on</i> Crear un acceso directo</button>
+		<app-social></app-social>
+	</article>
+</div>
 
 <div class="c-modal c-modal_description">
 	<div class="c-modal__body">
@@ -34,21 +38,50 @@
 		<div class="c-modal__container c-modal__container_xl">
 			<span class="c-modal__title">Crear un acceso directo</span>
 			<div class="c-modal__description">
-				<p>
-					Agregá esta web-app al inicio de tu smartphone.   <br> <br>
-
-					Ventajas: <br>
-					- Acceso instantáneo  <br>
-					- No ocupa espacio de almacenamiento en tu smartphone <br>
-					- Mejora de performance <br>
-					<br>
-					Seguí los pasos de abajo, es muy fácil!
-				</p>
-				<h4>1 - Hacé click en los puntitos de tu navegador para abrir el menú.</h4>
-				<img src="./assets/img/ui/shortcut__location-bar.png" alt="Abrir el menú">
-				<h4>2 - Elejí la opción "Añadir a pantalla de inicio"</h4>
-				<img src="./assets/img/ui/shortcut__menu.png" alt="Agregar al inicio">
-				<img src="./assets/img/ui/shortcut__modal.png" alt="Elegir un nombre y agregar">
+				<article>
+					<section class="c-cards c-cards_flat">
+						<div class="c-cards__header">
+							<span class="c-cards__title">1 - Abrir el menú</span>
+						</div>
+						<div class="c-cards__body">
+							<b>Presioná en el icono de <i class="material-icons">more_vert</i></b> para acceder al menú del navegador.
+							<br>
+							Generalmente está ubicado, en la parte superior derecha del navegador.
+							<br><br>
+							(Instrucciones válidas para Google Chrome, aunque también se puede hacer en Firefox o Safari)
+						</div>
+					</section>
+					<section class="c-cards c-cards_flat">
+						<div class="c-cards__header">
+							<span class="c-cards__title">2 - Elegir la opción correcta</span>
+						</div>
+						<div class="c-cards__body">
+							Cuando se abra el menú, tenés que elegir la opción <b>"Añadir a pantalla de inicio"</b>.
+						</div>
+					</section>
+					<section class="c-cards c-cards_flat">
+						<div class="c-cards__header">
+							<span class="c-cards__title">3 - Añadir al inicio</span>
+						</div>
+						<div class="c-cards__body">
+							Se va a mostrar recuadro para que puedas modificar el nombre. Luego presiona <b>"Añadir"</b>
+							<br>
+							Listo, el icono de la aplicación aparecerá tu pantalla de inicio.
+						</div>
+					</section>
+					<section class="c-cards c-cards_flat">
+						<div class="c-cards__header">
+							<span class="c-cards__title">¿Qué ventajas tiene?</span>
+						</div>
+						<div class="c-cards__body">
+							<ul>
+								<li>Acceso instantáneo a la app</li><br>
+								<li>No ocupa espacio de almacenamiento en tu smartphone</li><br>
+								<li>Mejora la performance</li><br>
+							</ul>
+						</div>
+					</section>
+				</article>
 			</div>
 		</div>
 	</div>
@@ -58,5 +91,6 @@
 	</div>
 </div>
 
+<div class="c-biginput__cancel" onclick="f_setUserInputBlur(true);"><i class="material-icons md-48">close</i></div>
 <app-navigation></app-navigation>
 <!-- NOTE: On load trick --> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQIW2NgYAAAAAMAAdzsfUgAAAAASUVORK5CYII=" class="h-hidden" onload="f_detectPageAndApplyToNav('calculate');">

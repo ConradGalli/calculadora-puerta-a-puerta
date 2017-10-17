@@ -4,6 +4,10 @@
 	width: 100%
 	transition: transform 0.2s ease, padding 0.2s ease
 
+	+responsive(551, min)
+		width: 450px
+		max-width: 450px
+
 	&.is-visible
 
 		.c-result-nav__back
@@ -35,6 +39,10 @@
 		border-radius: 0
 		box-shadow: 0 3px 10px darken($br-gray-light, 10%)
 		transition: height 0.2s ease, padding 0.2s ease
+
+		+responsive(551, min)
+			width: 450px
+			max-width: 450px
 
 	&__back
 		color: $br-extra

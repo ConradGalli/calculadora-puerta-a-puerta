@@ -1,128 +1,132 @@
-<div class="c-result-nav">
-	<div class="c-result-nav__box">
-		<a routerLink="/calculate" class="c-result-nav__back" for="price_original" onclick="f_animateBiginputToTop();"><i class="material-icons md-36">arrow_back</i></a>
-		<div class="c-result-nav__wrapper">
-			<div class="c-result-nav__old-value">Precio original US$ <span id="price_original"></span></div>
-			<div class="c-result-nav__new-value" id="price_final" onchange="console.log('Cambió el texto re lokokfjsdakfjkslafjlksdajf;jdsafjafjd')">0.00</div>
+<div class="wrapper wrapper_xs">
+	<div class="c-result-nav">
+		<div class="c-result-nav__box">
+			<a routerLink="/calculate" class="c-result-nav__back" for="price_original" onclick="f_animateBiginputToTop();"><i class="material-icons md-36">arrow_back</i></a>
+			<div class="c-result-nav__wrapper">
+				<div class="c-result-nav__old-value">Precio original US$ <span id="price_original"></span></div>
+				<div class="c-result-nav__new-value" id="price_final" onchange="console.log('Cambió el texto re lokokfjsdakfjkslafjlksdajf;jdsafjafjd')">0.00</div>
+			</div>
 		</div>
-	</div>
-	<div class="c-result-nav__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
-	<div class="c-result-nav__loading">
-		<span class="c-result-nav__progress c-result-nav__progress_a"></span>
-		<span class="c-result-nav__progress c-result-nav__progress_b"></span>
+		<div class="c-result-nav__dollar">Dolar: AR$<span id="dollarConverted">00.00</span></div>
+		<div class="c-result-nav__loading">
+			<span class="c-result-nav__progress c-result-nav__progress_a"></span>
+			<span class="c-result-nav__progress c-result-nav__progress_b"></span>
+		</div>
 	</div>
 </div>
 
-<article class="l-results__body">
+<div class="wrapper wrapper_xs">
+	<article class="l-results__body">
 
-	<div class="c-cards">
-		<div class="c-cards__header">
-			<i class="material-icons">import_contacts</i>
-			<span class="c-cards__title">Esta compra es un libro</span>
-			<div class="c-cards__action">
-				<i class="material-icons" id="book" onclick="f_toggleActionCards($(this));f_toggleBookPurchase();">check_box_outline_blank</i>
+		<div class="c-cards">
+			<div class="c-cards__header">
+				<i class="material-icons">import_contacts</i>
+				<span class="c-cards__title">Esta compra es un libro</span>
+				<div class="c-cards__action">
+					<i class="material-icons" id="book" onclick="f_toggleActionCards($(this));f_toggleBookPurchase();">check_box_outline_blank</i>
+				</div>
+			</div>
+			<div class="c-cards__body">
+				Los libros no pagan impuestos del 50%.
 			</div>
 		</div>
-		<div class="c-cards__body">
-			Los libros no pagan impuestos del 50%.
-		</div>
-	</div>
 
-	<div class="c-cards">
-		<div class="c-cards__header">
-			<i class="material-icons">local_activity</i>
-			<span class="c-cards__title">Es mi primer compra del año</span>
-			<div class="c-cards__action">
-				<i class="material-icons" id="franchise" onclick="f_toggleActionCards($(this));f_toggleAnualFranchise();">check_box_outline_blank</i>
+		<div class="c-cards">
+			<div class="c-cards__header">
+				<i class="material-icons">local_activity</i>
+				<span class="c-cards__title">Es mi primer compra del año</span>
+				<div class="c-cards__action">
+					<i class="material-icons" id="franchise" onclick="f_toggleActionCards($(this));f_toggleAnualFranchise();">check_box_outline_blank</i>
+				</div>
+			</div>
+			<div class="c-cards__body">
+				Si es tu primer compra del año, los impuestos del 50% tienen una bonificación de US$ 25 sobre el total de la compra (precio + envío).
 			</div>
 		</div>
-		<div class="c-cards__body">
-			Si es tu primer compra del año, los impuestos del 50% tienen una bonificación de US$ 25 sobre el total de la compra (precio + envío).
-		</div>
-	</div>
 
-	<div class="c-cards">
-		<div class="c-cards__header">
-			<i class="material-icons">airplanemode_active</i>
-			<span class="c-cards__title">El envío está incluido</span>
-			<div class="c-cards__action">
-				<i class="material-icons l-results__shipping-status" onclick="f_toggleActionCards($(this));f_toggleShipping();">check_box_outline_blank</i>
+		<div class="c-cards">
+			<div class="c-cards__header">
+				<i class="material-icons">airplanemode_active</i>
+				<span class="c-cards__title">El envío está incluido</span>
+				<div class="c-cards__action">
+					<i class="material-icons l-results__shipping-status" onclick="f_toggleActionCards($(this));f_toggleShipping();">check_box_outline_blank</i>
+				</div>
 			</div>
-		</div>
-		<div class="c-cards__body">
-			El costo del envío forma parte del total de la compra. Es importante para calcular el impuesto del VEP.
-			<div class="l-results__shipping">
-				<label for="shipping_price">Ingresa el costo del envío:</label>
-				<div class="l-results__shipping-input">
-					<label for="shipping_price">US$</label>
-					<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00" onkeyup="f_setInputShippingValidation($(this));">
-					<span class="l-results__shipping-ok" onclick="f_calculate__ars(false);"><i class="material-icons">refresh</i></span>
+			<div class="c-cards__body">
+				El costo del envío forma parte del total de la compra. Es importante para calcular el impuesto del VEP.
+				<div class="l-results__shipping">
+					<label for="shipping_price">Ingresa el costo del envío:</label>
+					<div class="l-results__shipping-input">
+						<label for="shipping_price">US$</label>
+						<input type="number" name="" value="" id="shipping_price" class="c-details__input is-selected" placeholder="0.00" onkeyup="f_setInputShippingValidation($(this));">
+						<span class="l-results__shipping-ok" onclick="f_calculate__ars(false);"><i class="material-icons">refresh</i></span>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="c-cards">
-		<div class="c-cards__header">
-			<i class="material-icons">format_list_bulleted</i>
-			<span class="c-cards__title">Detalles del proceso</span>
+		<div class="c-cards">
+			<div class="c-cards__header">
+				<i class="material-icons">format_list_bulleted</i>
+				<span class="c-cards__title">Detalles del proceso</span>
+			</div>
+			<div class="c-cards__body">
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Valor del dólar</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-dollar">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Precio original del producto en USD</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-product">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Precio del producto convertido a ARS</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-product-ars">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Precio del envío</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-shipping">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Producto + envío</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-fullprice">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Franquicia anual de importación</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-franchise">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Precio con beneficio de franquicia aplicado</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-franchisedprice">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">VEP (impuesto del 50% aplicado sobre el valor en US$ del producto + envío)</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-tax">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Subtotal en USD</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-priceusd">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Subtotal en ARS</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-pricears">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Servicios del Correo Argentino</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-courrier">XX$ 00.00</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Inflación de la compra en relación al precio + envío original</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-inflation">0%</div>
+				</div>
+				<div class="c-cards__row">
+					<div class="c-cards__cell c-cards__cell_label">Total en ARS</div>
+					<div class="c-cards__cell c-cards__cell_result" id="log-totalars">XX$ 00.00</div>
+				</div>
+			</div>
 		</div>
-		<div class="c-cards__body">
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Valor del dólar</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-dollar">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Precio original del producto en USD</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-product">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Precio del producto convertido a ARS</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-product-ars">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Precio del envío</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-shipping">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Producto + envío</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-fullprice">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Franquicia anual de importación</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-franchise">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Precio con beneficio de franquicia aplicado</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-franchisedprice">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">VEP (impuesto del 50% aplicado sobre el valor en US$ del producto + envío)</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-tax">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Subtotal en USD</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-priceusd">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Subtotal en ARS</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-pricears">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Servicios del Correo Argentino</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-courrier">XX$ 00.00</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Inflación de la compra en relación al precio + envío original</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-inflation">0%</div>
-			</div>
-			<div class="c-cards__row">
-				<div class="c-cards__cell c-cards__cell_label">Total en ARS</div>
-				<div class="c-cards__cell c-cards__cell_result" id="log-totalars">XX$ 00.00</div>
-			</div>
-		</div>
-	</div>
 
-	<app-social></app-social>
-</article>
+		<app-social></app-social>
+	</article>
+</div>
 <!-- NOTE: On load trick --> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQIW2NgYAAAAAMAAdzsfUgAAAAASUVORK5CYII=" class="h-hidden" onload="f_setResultsVisivility();f_calculate__ars(false);">

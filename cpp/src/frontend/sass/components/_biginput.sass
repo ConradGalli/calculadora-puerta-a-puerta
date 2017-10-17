@@ -102,6 +102,30 @@
 		&_b
 			animation: animateLoadingB 1.5s ease infinite
 
+	&__cancel
+		position: fixed
+		bottom: 0
+		left: 0
+		z-index: 990
+		width: 100%
+		display: flex
+		visibility: hidden
+		justify-content: center
+		align-items: center
+		flex-direction: row
+		height: $nav-height * 1.5
+		color: $nf-error
+
+		&.is-visible
+			visibility: visible
+
+			.material-icons
+				transform: scale(1)
+
+		.material-icons
+			transform: scale(0)
+			transition: transform 0.2s ease 0.4s
+
 @keyframes animateBiginputToTop
 	0%
 		transform: scale(1)

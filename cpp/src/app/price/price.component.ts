@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-price',
@@ -11,7 +11,5 @@ export class PriceComponent implements OnInit {
 
 	ngOnInit() {
 	}
-	
-	@Input() price = 0;
 
 }

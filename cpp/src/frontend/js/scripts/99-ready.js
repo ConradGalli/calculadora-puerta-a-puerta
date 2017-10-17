@@ -1,6 +1,13 @@
 var viewportHeight = $(window).height();
 
 $(document).ready(function() {
+	if ($(window).width() > 550 ) {
+		// alert('Por el momento esta app solo se ve bien en smartphones, no está disponible para escritorio. \n\n Disculpa las molestias. Al aceptar, serás redirigido al repositorio en GitHub.');
+		// $('html, body').hide();
+	}
+
+
+	$('body').css('min-height', viewportHeight);
 
 
 	$('#dollarConverted').text(dollarConverted.toFixed(2));
@@ -14,10 +21,7 @@ $(document).ready(function() {
 
 	$('#price_input').blur(function() {
 		if ($.trim($('#price_input').val()) === '') {
-			$('.c-biginput').removeClass('is-active');
-			$('.c-logo_home').removeClass('is-disabled');
-			$('.l-home__body').fadeIn();
-			$('.c-biginput__loading').removeClass('is-enabled');
+			f_setUserInputBlur();
 		}
 	});
 

@@ -1,9 +1,7 @@
 function f_social__share(version) {
-	// Compartir en redes sociales: reemplazar "version" por 'mobile' o 'landing' según corresponda
 	// No usar "|" (pipe) o caracteres especiales en el <title> del html
-	var rawUrl = window.location.href,
-			destination = '/'+version,
-			myUrl = rawUrl.split(destination), // separo la url según la versión de mi página
+	// var	myUrl = 'https://lucasromerodb.github.io/calculadora-puerta-a-puerta/',
+	var	myUrl = 'https://goo.gl/o9AxQz',
 			title = $(document).find("title").text(),
 			facebook = 'https://www.facebook.com/sharer/sharer.php?u='+myUrl+'',
 			twitter = 'https://twitter.com/intent/tweet?text='+title+'%20'+myUrl+'';

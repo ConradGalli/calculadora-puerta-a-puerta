@@ -26,6 +26,10 @@ function f_animateBiginputToTop() {
 		$('.c-logo_home').addClass('is-disabled');
 		$('.l-home__body').fadeOut(100);
 		$('.c-biginput__loading').addClass('is-enabled');
+		$('.c-biginput__cancel').addClass('is-visible');
+		if ($(window).width() > 550) {
+			$('.c-navigation').hide().addClass('has-keyboard');
+		}
 	}
 }
 
@@ -36,8 +40,8 @@ function f_setNavVisibility() {
 	if (newViewportHeight < viewportHeight) {
 		$('.c-navigation').hide().addClass('has-keyboard');
 	} else {
-		$('.c-navigation').show().removeClass('has-keyboard');
 		if ($.trim($('#price_input').val()) === '') {
+			$('.c-navigation').show().removeClass('has-keyboard');
 			$('#price_input').blur();
 		}
 	}
@@ -53,9 +57,20 @@ function f_toggleActionCards(el) {
 	}
 }
 
+function f_setUserInputBlur(reset) {
+	$('.c-biginput').removeClass('is-active');
+	$('.c-logo_home').removeClass('is-disabled');
+	$('.l-home__body').fadeIn();
+	$('.c-biginput__loading').removeClass('is-enabled');
+	$('.c-biginput__cancel').removeClass('is-visible');
+	if (reset === true) {
+		$('#price_input').val('');
+		$('.c-biginput__ok').removeClass('is-enabled');
+		$('.c-navigation').show().removeClass('has-keyboard');
+	}
+}
+
 function f_setResultsVisivility() {
-	// setTimeout(function() {
-		$('.c-result-nav').addClass('is-visible');
-		$('.l-results__body').addClass('is-visible');
-	// },200);
+	$('.c-result-nav').addClass('is-visible');
+	$('.l-results__body').addClass('is-visible');
 }
