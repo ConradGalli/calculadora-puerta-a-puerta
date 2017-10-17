@@ -68,6 +68,9 @@ function f_setUserInputBlur(reset) {
 		$('.c-biginput__ok').removeClass('is-enabled');
 		$('.c-navigation').show().removeClass('has-keyboard');
 	}
+	if ($(window).width() > 550) {
+		$('.c-navigation').show().removeClass('has-keyboard');
+	}
 }
 
 function f_setResultsVisivility() {
