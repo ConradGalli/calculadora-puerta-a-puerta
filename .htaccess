@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+Options Indexes FollowSymLinks
+RewriteEngine On
+RewriteBase /calculadora-puerta-a-puerta/
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /calculadora-puerta-a-puerta/index.html [L]
+</IfModule>
